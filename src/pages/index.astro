@@ -1,21 +1,22 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import Hero from "@/components/Hero.astro";
 
 const preloadImages = [
 	{
-		href: "",
+		href: "/assets/images/canton-fair-2014-china.jpg",
 		as: "image",
-		type: "image/webp",
+		type: "image/jpeg",
 	},
 ];
 ---
 
 <Layout
-	title=""
+	title="B TO B Comex - Feria de Cantón"
 	canonical=""
-	metaDescription=""
-	metaImg=""
+	metaDescription="Viví la Feria de Cantón Abril 2026 con B TO B Comex."
+	metaImg="/assets/images/canton-fair-2014-china.jpg"
 	preLoad={preloadImages}
 >
-	<section></section>
+	<Hero />
 </Layout>

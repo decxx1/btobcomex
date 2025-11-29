@@ -2,8 +2,13 @@
 
 @theme {
   --font-montserrat: 'Montserrat Variable', sans-serif;
-
+  --color-rojo: #d60a19;
+  --color-verde-deg-1: #19384b;
+  --color-verde-deg-2: #56707c;
 }
 
+@utility shadow-xx {
+  text-shadow: 8px 10px 8px black;
+}
 
 @plugin "@tailwindcss/typography";
