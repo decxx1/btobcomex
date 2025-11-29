@@ -3,8 +3,12 @@
 @theme {
   --font-montserrat: 'Montserrat Variable', sans-serif;
   --color-rojo: #d60a19;
+  --color-rojo-deg-1: #941800;
   --color-verde-deg-1: #19384b;
   --color-verde-deg-2: #56707c;
+  --color-crema-deg-1: #f4eddd;
+  --color-crema: #dfc39f;
+  --color-semi-black: #070707;
 }
 
 @utility shadow-xx {

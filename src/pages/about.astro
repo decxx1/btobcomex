@@ -1,0 +1,50 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Hero from "@/components/Hero.astro";
+import WhatsAppButton from "@/components/WhatsAppButton.astro";
+import HeaderTitle from "@/components/HeaderTitle.astro";
+import Founders from "@/components/about/Founders.astro";
+import Mision from "@/components/about/Mision.astro";
+import Vision from "@/components/about/Vision.astro";
+import Values from "@/components/about/Values.astro";
+import Purpose from "@/components/about/Purpose.astro";
+
+const preloadImages = [
+	{
+		href: "/assets/images/hero-about.png",
+		as: "image",
+		type: "image/png",
+	},
+];
+---
+
+<Layout
+	title="B TO B Comex - Nosotros"
+	canonical=""
+	metaDescription="Conocé a los fundadores de B TO B Comex."
+	metaImg="/assets/images/hero-about.png"
+	preLoad={preloadImages}
+>
+	<Hero
+		bgImage="/assets/images/hero-about.png"
+		title="Tu puente entre <br /> el comercio y el mundo"
+		showBottomBar={false}
+	/>
+
+	<WhatsAppButton />
+
+	<Founders />
+	<HeaderTitle title="NUESTRA MISIÓN" />
+	<section class="bg-linear-to-b from-verde-deg-1 to-crema-deg-1 text-white relative overflow-hidden">
+		<Mision />
+		<HeaderTitle title="NUESTRA VISIÓN" />
+		<Vision />
+		<HeaderTitle title="VALORES QUE NOS RIGEN" />
+		<Values />
+		<HeaderTitle title="NUESTRO PROPÓSITO" />
+		<Purpose />
+	</section>
+	
+	
+	
+</Layout>

@@ -1,0 +1,58 @@
+---
+interface Props {
+	name: string;
+	direction?: "left" | "right";
+}
+
+const { name, direction = "left" } = Astro.props;
+
+const arrowSrc =
+	direction === "left"
+		? "/assets/elements/arrow-left-white.svg"
+		: "/assets/elements/arrow-right-white.svg";
+
+const arrowPositionClass = direction === "left" ? "-left-20" : "-right-20";
+
+const objectPositionClass =
+	direction === "left" ? "object-right" : "object-left";
+---
+
+<!-- CTA Section -->
+<section
+	class:list={[
+		"relative w-full bg-linear-to-r text-white py-20 overflow-hidden",
+		direction === "left"
+			? "from-verde-deg-1 to-verde-deg-2"
+			: "from-verde-deg-2 to-verde-deg-1",
+	]}
+>
+	<!-- Arrow Overlay -->
+	<div
+		class:list={[
+			"absolute top-0 h-full w-[40%] md:w-[30%] z-0 pointer-events-none",
+			arrowPositionClass,
+		]}
+	>
+		<img
+			src={arrowSrc}
+			alt=""
+			class:list={[
+				"h-full w-full object-cover opacity-70 mix-blend-overlay",
+				objectPositionClass,
+			]}
+		/>
+	</div>
+
+	<div
+		class:list={[
+			"container mx-auto px-4 md:px-12 relative z-10 flex justify-center",
+			direction === "left" ? "text-right" : "text-left",
+		]}
+	>
+		<p class="text-xl md:text-3xl font-light leading-relaxed max-w-5xl">
+			Junto a <span class="font-bold">{name}</span>, trabajamos para
+			consolidar un puente profesional, confiable y estratégico entre los
+			emprendimientos locales y las oportunidades globales.
+		</p>
+	</div>
+</section>
