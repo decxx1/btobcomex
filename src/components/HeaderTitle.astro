@@ -2,12 +2,14 @@
 interface Props {
 	title: string;
 	isRed?: boolean;
+	id?:string;
 }
 
-const { title, isRed = false } = Astro.props;
+const { title, isRed = false, id } = Astro.props;
 ---
 
 <section
+	id={id}
 	class:list={[
 		"relative z-20 bg-linear-to-r  py-12 px-4 md:px-12",
 		isRed ? "from-rojo-deg-1 from-40% to-black" : "from-verde-deg-1 via-verde-deg-2 to-white"

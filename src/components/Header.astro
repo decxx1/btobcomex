@@ -85,10 +85,74 @@
 						>Feria de Cantón</a
 					>
 				</li>
-				<li>
-					<a href="#" class="hover:text-gray-200 transition-colors"
-						>Servicios</a
+				<li class="relative group">
+					<a
+						href="/services"
+						class="flex items-center gap-1 hover:text-gray-200 py-2"
 					>
+						Servicios
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="16"
+							height="16"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							class="w-4 h-4"><path d="m6 9 6 6 6-6"></path></svg
+						>
+					</a>
+					<!-- Dropdown -->
+					<div
+						class="absolute top-full left-0 mt-0 w-48 bg-[#004d5a] text-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden"
+					>
+						<ul class="flex flex-col">
+							<li>
+								<a
+									href="/services#documentation"
+									class="block px-4 py-3 hover:bg-[#003842] border-b border-[#003842]/30"
+									>Gestión Documental</a
+								>
+							</li>
+							<li>
+								<a
+									href="/services#logistics"
+									class="block px-4 py-3 hover:bg-[#003842] border-b border-[#003842]/30"
+									>Logística Internacional</a
+								>
+							</li>
+							<li>
+								<a
+									href="/services#consultancy"
+									class="block px-4 py-3 hover:bg-[#003842] border-b border-[#003842]/30"
+									>Consultoría en Comercio Internacional</a
+								>
+							</li>
+							<li>
+								<a
+									href="/services#incoterms"
+									class="block px-4 py-3 hover:bg-[#003842] border-b border-[#003842]/30"
+									>Gestión de Incoterms</a
+								>
+							</li>
+							<li>
+								<a
+									href="/services#export"
+									class="block px-4 py-3 hover:bg-[#003842]"
+									>Servicios de Exportación</a
+								>
+							</li>
+							<li>
+								<a
+									href="/services#import"
+									class="block px-4 py-3 hover:bg-[#003842]"
+									>Servicios de Importación</a
+								>
+							</li>
+						</ul>
+					</div>
 				</li>
 				<li>
 					<a href="#" class="hover:text-gray-200 transition-colors"

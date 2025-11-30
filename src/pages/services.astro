@@ -1,0 +1,109 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Hero from "@/components/Hero.astro";
+import WhatsAppButton from "@/components/WhatsAppButton.astro";
+import HeaderTitle from "@/components/HeaderTitle.astro";
+import ServiceBlock from "@/components/services/ServiceBlock.astro";
+
+const preloadImages = [
+	{
+		href: "/assets/images/AAch03.jpg",
+		as: "image",
+		type: "image/jpeg",
+	},
+];
+---
+
+<Layout
+	title="B TO B Comex - Servicios"
+	canonical=""
+	metaDescription="Conocé los servicios que B TO B Comex ofrece para tu negocio."
+	metaImg="/assets/images/AAch03.jpg"
+	preLoad={preloadImages}
+>
+	<Hero
+		bgImage="/assets/images/AAch03.jpg"
+		title="Tu puente entre <br /> el comercio y el mundo"
+		showBottomBar={true}
+	/>
+
+	<WhatsAppButton />
+
+	<HeaderTitle title="GESTIÓN DOCUMENTAL" isRed={false} id="documentation" />
+	<ServiceBlock
+		image="/assets/images/vista-lateral-del-documento-de-lectura-empresaria-en-la-oficina.jpg"
+		imageAlt="Gestión documental"
+		imagePosition="right"
+		phrases={[
+			"Preparación y revisión de documentación internacional (Comercial Invoice, Packing List, Certificados de Origen, BL/AWB, Carta de Porte, Certificaciones de calidad o sanitarias).",
+			"Tramitación de permisos y licencias previas.",
+			"Digitalización y control documental con auditorías regulares."
+		]}
+	/>
+
+	<HeaderTitle title="LOGÍSTICA INTERNACIONAL" isRed={false} id="logistics" />
+	<ServiceBlock
+		image="/assets/images/buque-de-carga-navegando-traves-del-oceano.jpg"
+		imageAlt="Logística internacional"
+		imagePosition="left"
+		phrases={[
+			"Cotización, negociación y contratación de fletes internacionales (marítimo, aéreo y terrestre).",
+			"Coordinación de carga, desconsolidación y recepción.",
+			"Gestión con forwarders, agentes internacionales y terminales.",
+			"Seguimiento en tránsito.",
+			"Optimización de costos logísticos según Incoterm."
+		]}
+	/>
+
+	<HeaderTitle title="CONSULTORÍA EN COMERCIO INTERNACIONAL" isRed={false} id="consultancy" />
+	<ServiceBlock
+		image="/assets/images/consultoria-comercio.png"
+		imageAlt="Consultoría en comercio internacional"
+		imagePosition="right"
+		phrases={[
+			"Análisis de mercados y oportunidades comerciales.",
+			"Estudio de viabilidad de importación/exportación.",
+			"Costeo completo bajo Incoterms.",
+			"Asesoramiento arancelario y normativo.",
+			"Planificación estratégica para la internacionalización de empresas."
+		]}
+	/>
+
+	<HeaderTitle title="GESTIÓN DE INCOTERMS" isRed={false} id="incoterms" />
+	<ServiceBlock
+		image="/assets/images/transporte-y-logistica-de-los-productos.jpg"
+		imageAlt="Gestión de incoterms"
+		imagePosition="left"
+		phrases={[
+			"Asesoramiento en selección del Incoterm ideal según el tipo de operación, el riesgo y el presupuesto.",
+			"Capacitación interna a equipos comerciales o logísticos.",
+			"Ajustes contractuales y revisión legal básica."
+		]}
+	/>
+
+	<HeaderTitle title="SERVICIOS DE EXPORTACIÓN" isRed={false} id="export" />
+	<ServiceBlock
+		image="/assets/images/servicios-exportacion.png"
+		imageAlt="Servicios de exportación"
+		imagePosition="right"
+		phrases={[
+			"Programas de desarrollo exportador.",
+			"Armado de perfiles internacionales y oferta exportable.",
+			"Inscripción como exportador.",
+			"Gestión de incentivos y reintegros a la exportación.",
+			"Asistencia en certificaciones exigidas por el destino."
+		]}
+	/>
+
+	<HeaderTitle title="SERVICIOS DE IMPORTACIÓN" isRed={false} id="import" />
+	<ServiceBlock
+		image="/assets/images/bea4ad501ee3f8a14827c50ed740ca6c.jpg"
+		imageAlt="Servicios de importación"
+		imagePosition="left"
+		phrases={[
+			"Evaluación de costos estimados (FOB, CIF, DDP, etc.).",
+			"Optimización impositiva (IVA, derechos, percepciones, regímenes promocionales).",
+			"Trámite de autorizaciones previas en organismos reguladores."
+		]}
+	/>
+</Layout>

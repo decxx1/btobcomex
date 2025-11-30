@@ -1,0 +1,49 @@
+---
+interface Props {
+	image: string;
+	imageAlt?: string;
+	phrases: string[];
+	imagePosition?: 'left' | 'right';
+}
+
+const { image, imageAlt = "", phrases, imagePosition = 'right' } = Astro.props;
+
+const isImageRight = imagePosition === 'right';
+---
+
+<section class="relative">
+	<div class:list={[
+		"grid grid-cols-1 md:grid-cols-12",
+		isImageRight ? "" : "md:grid-flow-col-dense"
+	]}>
+		<!-- Text Content -->
+		<div class:list={[
+			"md:col-span-8 flex flex-col justify-center py-12 md:py-16",
+			isImageRight ? "md:order-1" : "md:order-2"
+		]}>
+			<div class="space-y-4">
+				{phrases.map((phrase) => (
+					<p class="pl-4 md:pl-8 lg:pl-16 bg-linear-to-r from-verde-deg-1 from-10% to-verde-deg-2 text-white py-4 px-6 text-xl md:text-2xl lg:text-4xl font-medium">
+						{phrase}
+					</p>
+				))}
+			</div>
+		</div>
+
+		<!-- Image -->
+		<div class:list={[
+			"md:col-span-4 relative min-h-[300px] md:min-h-[400px]",
+			isImageRight ? "md:order-2" : "md:order-1"
+		]}>
+			<img
+				src={image}
+				alt={imageAlt}
+				class="w-full h-full object-cover"
+			/>
+			<!-- Gradient overlay -->
+			<div class:list={[
+				"absolute inset-0 pointer-events-none",
+			]}></div>
+		</div>
+	</div>
+</section>
