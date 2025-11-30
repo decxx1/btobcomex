@@ -1,0 +1,181 @@
+---
+import PhaseCard from "./PhaseCard.astro";
+
+// Datos de las fases
+const phase1Products = `Electrodomésticos del hogar. 
+Productos electrónicos de consumo 
+e información. 
+Automatización industrial y manufactura
+inteligente.
+Equipos de procesamiento de maquinaria. 
+Máquinas de energía y potencia eléctrica. 
+Maquinaria agrícola, de construcción.  
+Vehículos. Repuestos de vehículos. 
+Nuevos vehículos de energía y movilidad 
+inteligente. 
+Motocicletas. Bicicletas. 
+Recursos de nueva energía. 
+Iluminación. Productos y equipos eléctricos
+y electrónicos. 
+Nuevos materiales y productos químicos.
+Herramientas. Ferretería`;
+
+const phase2Products = `Cerámica general. Vajilla y utensilios de 
+cocina.
+Artículos para el hogar. Cristalería. 
+Decoraciones del hogar.
+Productos de jardinería. Productos de 
+festival.
+Regalos y premios. Relojes y óptica.
+Cerámica artística.
+Productos de tejido, ratán y hierro.
+Materiales de construcción y decoración.
+Equipos sanitarios y de baño.
+Muebles. Decoración de piedra/hierro y 
+equipos de spa al aire libre.`;
+
+const phase3Products = `Juguetes. Ropa para niños, bebés y 
+maternidad. Ropa para niños.
+Ropa y prendas deportivas. Ropa para 
+hombre y mujer.
+Productos de piel, cuero, plumón y 
+relacionados. Materias primas textiles y telas.
+Zapatos. Textiles para el hogar. Alfombras 
+y tapices.
+Productos de salud, medicina y dispositivos 
+médicos.
+Alimentos.
+Productos de cuidado y aseo personal.
+Accesorios y artículos de moda.
+Bolsos y maletas.
+Suministros de oficina
+Productos para mascotas y alimentos.
+Productos de deporte, viaje y recreación.`;
+---
+
+<section class="pb-16 lg:pb-24">
+	<!-- Header -->
+	<header class="bg-semi-black py-12 mb-14">
+		<section class="container mx-auto flex flex-col md:flex-row items-center md:justify-between gap-6">
+			<h2 class="text-3xl md:text-4xl lg:text-5xl text-white italic">
+				<span class="font-light">Fechas y fases de la</span><br />
+				<span class="font-bold">Feria de Cantón 2026</span>
+			</h2>
+
+			<!-- Tabs -->
+			<div class="flex gap-4">
+				<button 
+					id="tab-primavera"
+					class="tab-btn px-8 py-3 font-bold text-lg transition-all bg-verde-deg-2 text-white"
+					data-tab="primavera"
+				>
+					PRIMAVERA
+				</button>
+				<button 
+					id="tab-otono"
+					class="tab-btn px-8 py-3 font-bold text-lg transition-all bg-crema-deg-1 text-verde-deg-1"
+					data-tab="otono"
+				>
+					OTOÑO
+				</button>
+			</div>
+		</section>
+	</header>
+	<div class="container mx-auto px-4 md:px-12">
+		
+		<!-- Primavera Content -->
+		<div id="content-primavera" class="tab-content">
+			<!-- Season Title -->
+			<div class="bg-verde-deg-2 py-4 px-6 text-center mb-1">
+				<h3 class="text-xl font-bold text-white tracking-wider">PRIMAVERA</h3>
+			</div>
+
+			<PhaseCard 
+				phase="Fase 1" 
+				dates="15 al 19 de abril" 
+				products={phase1Products} 
+				variant="spring" 
+			/>
+			<PhaseCard 
+				phase="Fase 2" 
+				dates="23 al 27 de abril" 
+				products={phase2Products} 
+				variant="spring" 
+			/>
+			<PhaseCard 
+				phase="Fase 3" 
+				dates="1 al 5 de mayo" 
+				products={phase3Products} 
+				variant="spring" 
+			/>
+		</div>
+
+		<!-- Otoño Content -->
+		<div id="content-otono" class="tab-content hidden">
+			<!-- Season Title -->
+			<div class="bg-crema-deg-1 py-4 px-6 text-center mb-1">
+				<h3 class="text-xl font-bold text-verde-deg-1 tracking-wider">OTOÑO</h3>
+			</div>
+
+			<PhaseCard 
+				phase="Fase 1" 
+				dates="15 al 19 de octubre" 
+				products={phase1Products} 
+				variant="autumn" 
+			/>
+			<PhaseCard 
+				phase="Fase 2" 
+				dates="23 al 27 de octubre" 
+				products={phase2Products} 
+				variant="autumn" 
+			/>
+			<PhaseCard 
+				phase="Fase 3" 
+				dates="31 de octubre al 4 de noviembre" 
+				products={phase3Products} 
+				variant="autumn" 
+			/>
+		</div>
+	</div>
+</section>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const tabButtons = document.querySelectorAll('.tab-btn');
+		const tabContents = document.querySelectorAll('.tab-content');
+
+		tabButtons.forEach(button => {
+			button.addEventListener('click', () => {
+				const tab = button.getAttribute('data-tab');
+
+				// Hide all contents
+				tabContents.forEach(content => {
+					content.classList.add('hidden');
+				});
+
+				// Show selected content
+				document.getElementById(`content-${tab}`)?.classList.remove('hidden');
+
+				// Update button styles
+				tabButtons.forEach(btn => {
+					if (btn.getAttribute('data-tab') === 'primavera') {
+						btn.classList.remove('bg-verde-deg-2');
+						btn.classList.add('bg-verde-deg-1', 'text-verde-deg-1');
+					} else {
+						btn.classList.remove('bg-crema', 'text-verde-deg-1');
+						btn.classList.add('bg-crema-deg-1', 'text-verde-deg-1');
+					}
+				});
+
+				// Highlight active button
+				if (tab === 'primavera') {
+					button.classList.remove('bg-verde-deg-1', 'text-verde-deg-1');
+					button.classList.add('bg-verde-deg-2');
+				} else {
+					button.classList.remove('bg-crema-deg-1');
+					button.classList.add('bg-crema', 'text-verde-deg-1');
+				}
+			});
+		});
+	});
+</script>

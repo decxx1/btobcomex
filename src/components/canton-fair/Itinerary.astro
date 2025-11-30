@@ -1,0 +1,119 @@
+---
+import InfoCard from "./InfoCard.astro";
+import ItineraryItem from "./ItineraryItem.astro";
+---
+
+<section class="py-16 lg:py-24 relative">
+	<div class="container mx-auto px-4 md:px-12">
+		<!-- Title -->
+		<section class="relative">
+			<img 
+				src="/assets/elements/arrow-right-black.svg" 
+				alt="" 
+				class="absolute top-1/2 -translate-y-1/2 -left-72 w-64 h-auto opacity-20"
+			/>
+			<h2 class="text-4xl md:text-5xl lg:text-6xl font-light italic text-semi-black mb-12">
+				ITINERARIO
+			</h2>
+		</section>
+		
+
+		<!-- Itinerary Items -->
+		<div class="space-y-8 max-w-3xl">
+			<!-- Duration -->
+			<ItineraryItem
+			 image="/assets/icons/travel/calendar.svg"	
+			 title="DURACIÓN:"
+			 description="12 días"
+			/>
+
+			<!-- Flight 1 -->
+			<ItineraryItem
+			 image="/assets/icons/travel/fly.svg"	
+			 title="VUELO:"
+			 description="Santiago – Conexión (París - Francia) – Hong Kong"
+			/>
+
+			<!-- Stay -->
+			<ItineraryItem
+			 image="/assets/icons/travel/building.svg"	
+			 title="ESTADÍA:"
+			 description="Guangzhou"
+			/>
+
+			<!-- Visit 1 -->
+			<ItineraryItem
+			 image="/assets/icons/travel/visit.svg"	
+			 title="VISITA:"
+			 description="Principales puntos turísticos"
+			/>
+
+			<!-- Visit 2 -->
+			<ItineraryItem
+			 image="/assets/icons/travel/visit.svg"	
+			 title="VISITA:"
+			 description="5 días de asistencia a la Feria de Cantón"
+			/>
+
+			<!-- Flight 2 -->
+			<ItineraryItem
+			 image="/assets/icons/travel/fly.svg"	
+			 title="VUELO:"
+			 description="Hong Kong – Conexión (París - Francia) - Llegada a Chile"
+			/>
+
+		<!-- Disclaimer -->
+		<div class="mt-12 ml-8 md:ml-16">
+			<span class="border border-semi-black px-4 py-2 text-sm text-semi-black">
+				* Sujeto a modificaciones
+			</span>
+		</div>
+	</div>
+
+	<!-- Info Cards -->
+	<div class="container mx-auto px-4 md:px-12 mt-16 space-y-8">
+		<!-- Card 1 -->
+		<InfoCard title="¿A quién está dirigido el viaje?">
+			<p class="text-lg md:text-xl font-medium">
+				A empresas, emprendedores, pymes o dueños que buscan dar sus primeros pasos en la importación, adquirir productos sin intermediarios, aumentar márgenes de ganancia o crear vínculos comerciales sostenibles.
+			</p>
+		</InfoCard>
+
+		<!-- Card 2 -->
+		<InfoCard title="¿Por qué es tan importante asistir a la Feria de Cantón?">
+			<p class="text-lg md:text-xl font-medium">
+				La Feria de Cantón es el evento comercial más importante de China y uno de los más influyentes a nivel mundial. Ocurre dos veces al año, en primavera y en otoño, en la ciudad de Guangzhou, provincia de Guangdong. Desde su inicio en 1957, ha sido una instancia de encuentro entre compradores y fabricantes de todo el mundo.
+			</p>
+		</InfoCard>
+
+		<!-- Card 3 -->
+		<InfoCard title="Sus beneficios" hasBullets={true}>
+			<ul class="space-y-3 text-lg md:text-xl font-medium">
+				<li class="flex items-start gap-3">
+					<span class="w-16 h-1 bg-linear-to-r from-white to-rojo-deg-1 mt-3 shrink-0"></span>
+					<span>Acceso a una diversa gama de proveedores especializados e industrias en un recinto ferial, lo que acelera procesos de compra y permite impulsar nuevas líneas de negocio.</span>
+				</li>
+				<li class="flex items-start gap-3">
+					<span class="w-16 h-1 bg-linear-to-r from-white to-rojo-deg-1 mt-3 shrink-0"></span>
+					<span>Negociación directa con proveedores.</span>
+				</li>
+				<li class="flex items-start gap-3">
+					<span class="w-16 h-1 bg-linear-to-r from-white to-rojo-deg-1 mt-3 shrink-0"></span>
+					<span>Evaluación directa de la calidad de los productos y la oferta disponible.</span>
+				</li>
+				<li class="flex items-start gap-3">
+					<span class="w-16 h-1 bg-linear-to-r from-white to-rojo-deg-1 mt-3 shrink-0"></span>
+					<span>Establecimiento y fortalecimiento de vínculos con proveedores.</span>
+				</li>
+				<li class="flex items-start gap-3">
+					<span class="w-16 h-1 bg-linear-to-r from-white to-rojo-deg-1 mt-3 shrink-0"></span>
+					<span>Generación de oportunidades de colaboración con proveedores y empresarios de todo el mundo.</span>
+				</li>
+				<li class="flex items-start gap-3">
+					<span class="w-16 h-1 bg-linear-to-r from-white to-rojo-deg-1 mt-3 shrink-0"></span>
+					<span>Conocimiento de innovaciones y tendencias del mercado.</span>
+				</li>
+			</ul>
+		</InfoCard>
+	</div>
+</section>

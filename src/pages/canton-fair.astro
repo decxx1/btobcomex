@@ -1,0 +1,51 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Hero from "@/components/Hero.astro";
+import WhatsAppButton from "@/components/WhatsAppButton.astro";
+import HeaderTitle from "@/components/HeaderTitle.astro";
+import CTAExperience from "@/components/canton-fair/CTAExperience.astro";
+import ProgramForm from "@/components/canton-fair/ProgramForm.astro";
+import Itinerary from "@/components/canton-fair/Itinerary.astro";
+import FairSchedule from "@/components/canton-fair/FairSchedule.astro";
+
+const preloadImages = [
+	{
+		href: "/assets/images/AAch03.jpg",
+		as: "image",
+		type: "image/jpeg",
+	},
+];
+---
+
+<Layout
+	title="B TO B Comex - Feria de Cantón"
+	canonical=""
+	metaDescription="Conocé todo sobre la Feria de Cantón y cómo B TO B Comex puede ayudarte."
+	metaImg="/assets/images/AAch03.jpg"
+	preLoad={preloadImages}
+>
+	<Hero
+		bgImage="/assets/images/AAch03.jpg"
+		title="Tu puente entre <br /> el comercio y el mundo"
+		showBottomBar={true}
+	/>
+
+	<WhatsAppButton />
+
+	<HeaderTitle title="FERIA DE CANTÓN" isRed={true} />
+	
+	<CTAExperience />
+	
+	<ProgramForm />
+	<section class="relative">
+		<img
+			src='/assets/images/hermosa-arquitectura-de-la-ciudad-de-taipei.jpg'
+			alt=""
+			class="w-full h-auto -z-10 absolute -top-96 left-0 scale-x-[-1] object-cover object-top-left"
+		/>
+	</section>
+	
+	<Itinerary />
+	
+	<FairSchedule />
+</Layout>

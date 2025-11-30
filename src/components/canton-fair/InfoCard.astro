@@ -1,0 +1,25 @@
+---
+interface Props {
+	title: string;
+	hasBullets?: boolean;
+}
+
+const { title, hasBullets = false } = Astro.props;
+---
+
+<div class="overflow-hidden">
+	<!-- Header -->
+	<div class="bg-linear-to-r from-rojo-deg-1 from-40% to-black py-6 px-8">
+		<h3 class="text-2xl md:text-3xl lg:text-5xl font-extralight italic text-white text-center">
+			{title}
+		</h3>
+	</div>
+	
+	<!-- Body -->
+	<div class:list={[
+		"bg-black/60 py-8 px-8 text-white",
+		hasBullets ? "text-left" : "text-center"
+	]}>
+		<slot />
+	</div>
+</div>
