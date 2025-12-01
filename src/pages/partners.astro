@@ -1,0 +1,35 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Hero from "@/components/Hero.astro";
+import WhatsAppButton from "@/components/WhatsAppButton.astro";
+import HeaderTitle from "@/components/HeaderTitle.astro";
+import PartnersLogos from "@/components/partners/PartnersLogos.astro";
+
+const preloadImages = [
+	{
+		href: "/assets/images/Piedra-verde.png",
+		as: "image",
+		type: "image/png",
+	},
+];
+---
+
+<Layout
+	title="B TO B Comex - Partners Estratégicos"
+	canonical=""
+	metaDescription="Conocé a nuestros partners estratégicos en B TO B Comex."
+	metaImg="/assets/images/Piedra-verde.png"
+	preLoad={preloadImages}
+>
+	<Hero
+		bgImage="/assets/images/Piedra-verde.png"
+		title="Tu puente entre <br /> el comercio y el mundo"
+		showBottomBar={false}
+	/>
+
+	<WhatsAppButton />
+
+	<HeaderTitle title="PARTNERS ESTRATÉGICOS" isRed={false} />
+	
+	<PartnersLogos />
+</Layout>
