@@ -1,0 +1,108 @@
+---
+interface Props {
+	bgImages: string[];
+	title: string;
+}
+
+const {
+	bgImages,
+	title,
+} = Astro.props;
+---
+
+<section class="relative h-screen w-full overflow-hidden font-montserrat">
+	<!-- Background Images Carousel -->
+	<div class="absolute inset-0 z-0" id="hero-carousel">
+		{bgImages.map((image, index) => (
+			<img
+				src={image}
+				alt={`Hero Background ${index + 1}`}
+				class:list={[
+					"carousel-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out",
+					index === 0 ? "opacity-100" : "opacity-0"
+				]}
+				data-index={index}
+			/>
+		))}
+		<!-- Dark Overlay -->
+		<div class="absolute inset-0 mask-b-from-10% mask-b-to-60% bg-black/70">
+		</div>
+	</div>
+
+	<!-- Right Arrow Mask Overlay -->
+	<!-- Positioned absolutely to the right, taking up full height -->
+	<div
+		class="absolute top-0 right-0 h-full w-[60%] lg:w-[40%] z-10 pointer-events-none hidden md:block"
+	>
+		<img
+			src="/assets/elements/arrow-right.svg"
+			alt="elemento decorativo"
+			class="h-full w-full object-cover object-left opacity-20 mix-blend-multiply"
+		/>
+	</div>
+
+	<!-- Content -->
+	<div
+		class="relative z-20 container mx-auto h-full flex flex-col justify-center px-4 md:px-12 text-white pt-20"
+	>
+		<h1
+			class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight max-w-4xl shadow-xx"
+			set:html={title}
+		/>
+	</div>
+
+	<!-- Bottom Elements -->
+	<div class="absolute bottom-0 left-0 w-full z-30">
+		<div class="container mx-auto flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-12 pb-12 md:pb-16">
+			<!-- Anniversary Badge (Red Bar) -->
+			<div class="relative flex items-center">
+				<div class="inline -ml-64 -mr-20 bg-rojo h-12 md:h-28 w-96" />
+				<img
+					src="/assets/elements/aniversary.svg"
+					alt="140 Aniversario"
+					class="h-12 md:h-40"
+				/>
+			</div>
+
+			<!-- CTA Button -->
+			<a
+				href="#"
+				class="group bg-radial from-rojo to-[#6d0000] hover:bg-[#6d0000] text-white py-4 px-12 rounded-full flex flex-col items-start text-left transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+			>
+				<span class="text-xl md:text-3xl font-bold">
+					Reservá tu lugar
+				</span>
+				<span class="text-xs md:text-xl font-light opacity-90">
+					Feria de Cantón Abril 2026
+				</span>
+			</a>
+		</div>
+	</div>
+</section>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const slides = document.querySelectorAll<HTMLImageElement>('.carousel-slide');
+		if (slides.length <= 1) return;
+
+		let currentIndex = 0;
+		const totalSlides = slides.length;
+		const intervalTime = 5000; // 5 segundos entre cada imagen
+
+		const nextSlide = () => {
+			// Ocultar slide actual
+			slides[currentIndex].classList.remove('opacity-100');
+			slides[currentIndex].classList.add('opacity-0');
+
+			// Avanzar al siguiente
+			currentIndex = (currentIndex + 1) % totalSlides;
+
+			// Mostrar nuevo slide
+			slides[currentIndex].classList.remove('opacity-0');
+			slides[currentIndex].classList.add('opacity-100');
+		};
+
+		// Iniciar carrusel automático
+		setInterval(nextSlide, intervalTime);
+	});
+</script>

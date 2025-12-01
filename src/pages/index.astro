@@ -1,6 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import Hero from "@/components/Hero.astro";
+import HeroCaroussel from "@/components/HeroCaroussel.astro";
 
 const preloadImages = [
 	{
@@ -18,9 +18,13 @@ const preloadImages = [
 	metaImg="/assets/images/canton-fair-2014-china.jpg"
 	preLoad={preloadImages}
 >
-	<Hero
-		bgImage="/assets/images/canton-fair-2014-china.jpg"
+	<HeroCaroussel
+		bgImages={[
+			"/assets/images/canton-fair-2014-china.jpg",
+			"/assets/images/canton2.png",
+			"/assets/images/IMG_7912.jpeg",
+			
+		]}
 		title="Viví la Feria de Cantón <br /> <span class='block mt-2'>Abril 2026</span>"
-		showBottomBar={true}
 	/>
 </Layout>
