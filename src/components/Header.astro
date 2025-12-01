@@ -1,8 +1,13 @@
 ---
+const currentPath = Astro.url.pathname;
 
+const isActive = (path: string) => {
+	if (path === '/') return currentPath === '/';
+	return currentPath.startsWith(path);
+};
 ---
 
-<header class="fixed top-0 z-50 w-full">
+<header id="main-header" class="fixed top-0 z-50 w-full transition-colors duration-300">
 	<section
 		class="container mx-auto py-6 px-4 md:px-12 flex justify-between items-center text-white"
 	>
@@ -21,7 +26,10 @@
 				<li class="relative group">
 					<a
 						href="/about"
-						class="flex items-center gap-1 hover:text-gray-200 py-2"
+						class:list={[
+							"flex items-center gap-1 hover:text-gray-200 py-2",
+							isActive('/about') && "text-verde-claro"
+						]}
 					>
 						Quienes somos
 						<svg
@@ -39,41 +47,41 @@
 					</a>
 					<!-- Dropdown -->
 					<div
-						class="absolute top-full left-0 mt-0 w-48 bg-[#004d5a] text-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden"
+						class="absolute top-full left-0 mt-0 w-48 bg-verde-claro-2 text-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden"
 					>
 						<ul class="flex flex-col">
 							<li>
 								<a
 									href="/about#fundadores"
-									class="block px-4 py-3 hover:bg-[#003842] border-b border-[#003842]/30"
+									class="block px-4 py-3 hover:bg-verde-deg-1 border-b border-verde-deg-1/30"
 									>Fundadores</a
 								>
 							</li>
 							<li>
 								<a
 									href="/about#mision"
-									class="block px-4 py-3 hover:bg-[#003842] border-b border-[#003842]/30"
+									class="block px-4 py-3 hover:bg-verde-deg-1 border-b border-verde-deg-1/30"
 									>Misión</a
 								>
 							</li>
 							<li>
 								<a
 									href="/about#vision"
-									class="block px-4 py-3 hover:bg-[#003842] border-b border-[#003842]/30"
+									class="block px-4 py-3 hover:bg-verde-deg-1 border-b border-verde-deg-1/30"
 									>Visión</a
 								>
 							</li>
 							<li>
 								<a
 									href="/about#valores"
-									class="block px-4 py-3 hover:bg-[#003842] border-b border-[#003842]/30"
+									class="block px-4 py-3 hover:bg-verde-deg-1 border-b border-verde-deg-1/30"
 									>Valores</a
 								>
 							</li>
 							<li>
 								<a
 									href="/about#proposito"
-									class="block px-4 py-3 hover:bg-[#003842]"
+									class="block px-4 py-3 hover:bg-verde-deg-1"
 									>Propósito</a
 								>
 							</li>
@@ -81,14 +89,21 @@
 					</div>
 				</li>
 				<li>
-					<a href="/canton-fair" class="hover:text-gray-200 transition-colors"
-						>Feria de Cantón</a
-					>
+					<a 
+						href="/canton-fair" 
+						class:list={[
+							"hover:text-gray-200 transition-colors",
+							isActive('/canton-fair') && "text-verde-claro"
+						]}
+					>Feria de Cantón</a>
 				</li>
 				<li class="relative group">
 					<a
 						href="/services"
-						class="flex items-center gap-1 hover:text-gray-200 py-2"
+						class:list={[
+							"flex items-center gap-1 hover:text-gray-200 py-2",
+							isActive('/services') && "text-verde-claro"
+						]}
 					>
 						Servicios
 						<svg
@@ -106,48 +121,48 @@
 					</a>
 					<!-- Dropdown -->
 					<div
-						class="absolute top-full left-0 mt-0 w-48 bg-[#004d5a] text-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden"
+						class="absolute top-full left-0 mt-0 w-48 bg-verde-claro-2 text-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden"
 					>
 						<ul class="flex flex-col">
 							<li>
 								<a
 									href="/services#documentation"
-									class="block px-4 py-3 hover:bg-[#003842] border-b border-[#003842]/30"
+									class="block px-4 py-3 hover:bg-verde-deg-1 border-b border-verde-deg-1/30"
 									>Gestión Documental</a
 								>
 							</li>
 							<li>
 								<a
 									href="/services#logistics"
-									class="block px-4 py-3 hover:bg-[#003842] border-b border-[#003842]/30"
+									class="block px-4 py-3 hover:bg-verde-deg-1 border-b border-verde-deg-1/30"
 									>Logística Internacional</a
 								>
 							</li>
 							<li>
 								<a
 									href="/services#consultancy"
-									class="block px-4 py-3 hover:bg-[#003842] border-b border-[#003842]/30"
+									class="block px-4 py-3 hover:bg-verde-deg-1 border-b border-verde-deg-1/30"
 									>Consultoría en Comercio Internacional</a
 								>
 							</li>
 							<li>
 								<a
 									href="/services#incoterms"
-									class="block px-4 py-3 hover:bg-[#003842] border-b border-[#003842]/30"
+									class="block px-4 py-3 hover:bg-verde-deg-1 border-b border-verde-deg-1/30"
 									>Gestión de Incoterms</a
 								>
 							</li>
 							<li>
 								<a
 									href="/services#export"
-									class="block px-4 py-3 hover:bg-[#003842]"
+									class="block px-4 py-3 hover:bg-verde-deg-1"
 									>Servicios de Exportación</a
 								>
 							</li>
 							<li>
 								<a
 									href="/services#import"
-									class="block px-4 py-3 hover:bg-[#003842]"
+									class="block px-4 py-3 hover:bg-verde-deg-1"
 									>Servicios de Importación</a
 								>
 							</li>
@@ -155,14 +170,22 @@
 					</div>
 				</li>
 				<li>
-					<a href="/contact" class="hover:text-gray-200 transition-colors"
-						>Contacto</a
-					>
+					<a 
+						href="/contact" 
+						class:list={[
+							"hover:text-gray-200 transition-colors",
+							isActive('/contact') && "text-verde-claro"
+						]}
+					>Contacto</a>
 				</li>
 				<li>
-					<a href="/partners" class="hover:text-gray-200 transition-colors"
-						>Partners estratégicos</a
-					>
+					<a 
+						href="/partners" 
+						class:list={[
+							"hover:text-gray-200 transition-colors",
+							isActive('/partners') && "text-verde-claro"
+						]}
+					>Partners estratégicos</a>
 				</li>
 			</ul>
 		</nav>
@@ -185,3 +208,21 @@
 		</button>
 	</section>
 </header>
+
+<script>
+	const header = document.getElementById('main-header');
+	
+	const handleScroll = () => {
+		if (window.scrollY > 50) {
+			header?.classList.add('bg-linear-to-r', 'from-verde-deg-black', 'to-verde-deg-2');
+		} else {
+			header?.classList.remove('bg-linear-to-r', 'from-verde-deg-black', 'to-verde-deg-2');
+		}
+	};
+
+	// Ejecutar al cargar
+	handleScroll();
+	
+	// Ejecutar al hacer scroll
+	window.addEventListener('scroll', handleScroll);
+</script>
