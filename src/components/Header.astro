@@ -9,19 +9,19 @@ const isActive = (path: string) => {
 
 <header id="main-header" class="fixed top-0 z-50 w-full transition-colors duration-300">
 	<section
-		class="container mx-auto py-6 px-4 md:px-12 flex justify-between items-center text-white"
+		class="container mx-auto py-6 px-4 lg:px-6 xl:px-12 flex justify-between items-center text-white"
 	>
 		<a href="/" class="flex items-center gap-2">
 			<img
 				src="/assets/logos/logo-color.svg"
 				alt="B TO B Comex"
-				class="h-12 md:h-16"
+				class="h-12 lg:h-12 xl:h-16"
 			/>
 		</a>
 
-		<nav class="hidden md:block">
+		<nav class="hidden lg:block">
 			<ul
-				class="flex items-center gap-8 font-medium lg:font-semibold text-base lg:text-lg xl:text-xl"
+				class="flex items-center gap-4 xl:gap-8 font-medium lg:font-medium xl:font-semibold text-base lg:text-base xl:text-lg 2xl:text-xl"
 			>
 				<li class="relative group">
 					<a
@@ -47,41 +47,41 @@ const isActive = (path: string) => {
 					</a>
 					<!-- Dropdown -->
 					<div
-						class="absolute top-full left-0 mt-0 w-48 bg-verde-claro-2 text-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden"
+						class="absolute top-full left-0 mt-0 w-48 lg:w-56 xl:w-80 bg-verde-claro-2 text-white shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden"
 					>
 						<ul class="flex flex-col">
 							<li>
 								<a
 									href="/about#fundadores"
-									class="block px-4 py-3 hover:bg-verde-deg-1 border-b border-verde-deg-1/30"
+									class="block px-4 py-3 hover:bg-verde-deg-1 border border-white"
 									>Fundadores</a
 								>
 							</li>
 							<li>
 								<a
 									href="/about#mision"
-									class="block px-4 py-3 hover:bg-verde-deg-1 border-b border-verde-deg-1/30"
+									class="block px-4 py-3 hover:bg-verde-deg-1 border border-white"
 									>Misión</a
 								>
 							</li>
 							<li>
 								<a
 									href="/about#vision"
-									class="block px-4 py-3 hover:bg-verde-deg-1 border-b border-verde-deg-1/30"
+									class="block px-4 py-3 hover:bg-verde-deg-1 border border-white"
 									>Visión</a
 								>
 							</li>
 							<li>
 								<a
 									href="/about#valores"
-									class="block px-4 py-3 hover:bg-verde-deg-1 border-b border-verde-deg-1/30"
+									class="block px-4 py-3 hover:bg-verde-deg-1 border border-white"
 									>Valores</a
 								>
 							</li>
 							<li>
 								<a
 									href="/about#proposito"
-									class="block px-4 py-3 hover:bg-verde-deg-1"
+									class="block px-4 py-3 hover:bg-verde-deg-1 border border-white"
 									>Propósito</a
 								>
 							</li>
@@ -121,48 +121,48 @@ const isActive = (path: string) => {
 					</a>
 					<!-- Dropdown -->
 					<div
-						class="absolute top-full left-0 mt-0 w-48 bg-verde-claro-2 text-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden"
+						class="absolute top-full left-0 mt-0 w-48 lg:w-56 xl:w-96 bg-verde-claro-2 text-white shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden"
 					>
 						<ul class="flex flex-col">
 							<li>
 								<a
 									href="/services#documentation"
-									class="block px-4 py-3 hover:bg-verde-deg-1 border-b border-verde-deg-1/30"
+									class="block px-4 py-3 hover:bg-verde-deg-1 border border-white"
 									>Gestión Documental</a
 								>
 							</li>
 							<li>
 								<a
 									href="/services#logistics"
-									class="block px-4 py-3 hover:bg-verde-deg-1 border-b border-verde-deg-1/30"
+									class="block px-4 py-3 hover:bg-verde-deg-1 border border-white"
 									>Logística Internacional</a
 								>
 							</li>
 							<li>
 								<a
 									href="/services#consultancy"
-									class="block px-4 py-3 hover:bg-verde-deg-1 border-b border-verde-deg-1/30"
+									class="block px-4 py-3 hover:bg-verde-deg-1 border border-white"
 									>Consultoría en Comercio Internacional</a
 								>
 							</li>
 							<li>
 								<a
 									href="/services#incoterms"
-									class="block px-4 py-3 hover:bg-verde-deg-1 border-b border-verde-deg-1/30"
+									class="block px-4 py-3 hover:bg-verde-deg-1 border border-white"
 									>Gestión de Incoterms</a
 								>
 							</li>
 							<li>
 								<a
 									href="/services#export"
-									class="block px-4 py-3 hover:bg-verde-deg-1"
+									class="block px-4 py-3 hover:bg-verde-deg-1 border border-white"
 									>Servicios de Exportación</a
 								>
 							</li>
 							<li>
 								<a
 									href="/services#import"
-									class="block px-4 py-3 hover:bg-verde-deg-1"
+									class="block px-4 py-3 hover:bg-verde-deg-1 border border-white"
 									>Servicios de Importación</a
 								>
 							</li>
@@ -191,7 +191,7 @@ const isActive = (path: string) => {
 		</nav>
 
 		<!-- Mobile Menu Button (Placeholder) -->
-		<button class="md:hidden text-white">
+		<button class="lg:hidden text-white">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				fill="none"
