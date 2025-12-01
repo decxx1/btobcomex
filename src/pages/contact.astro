@@ -1,0 +1,35 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Hero from "@/components/Hero.astro";
+import WhatsAppButton from "@/components/WhatsAppButton.astro";
+import HeaderTitle from "@/components/HeaderTitle.astro";
+import ContactInfo from "@/components/contact/ContactInfo.astro";
+
+const preloadImages = [
+	{
+		href: "/assets/images/lisa-pared-de-estuco-gris.jpg",
+		as: "image",
+		type: "image/jpeg",
+	},
+];
+---
+
+<Layout
+	title="B TO B Comex - Contacto"
+	canonical=""
+	metaDescription="Contactá con B TO B Comex para consultas sobre comercio internacional."
+	metaImg="/assets/images/lisa-pared-de-estuco-gris.jpg"
+	preLoad={preloadImages}
+>
+	<Hero
+		bgImage="/assets/images/piedra-deg.png"
+		title="Tu puente entre <br /> el comercio y el mundo"
+		showBottomBar={false}
+	/>
+
+	<WhatsAppButton />
+
+	<HeaderTitle title="CONTACTO" isRed={false} />
+	
+	<ContactInfo />
+</Layout>
