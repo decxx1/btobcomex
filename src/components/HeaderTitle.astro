@@ -11,13 +11,13 @@ const { title, isRed = false, id } = Astro.props;
 <section
 	id={id}
 	class:list={[
-		"relative z-20 bg-linear-to-r  py-12 px-4 md:px-12",
+		"relative z-20 bg-linear-to-r pt-16 pb-8 px-4 md:px-12",
 		isRed ? "from-rojo-deg-1 from-40% to-black" : "from-verde-deg-1 via-verde-deg-2 to-white"
 	]}
 >
 	<div class="container mx-auto">
 		<h2
-			class="text-4xl md:text-6xl font-thin italic text-white tracking-wider"
+			class="uppercase text-4xl lg:text-5xl 2xl:text-6xl font-light italic text-white"
 		>
 			{title}
 		</h2>

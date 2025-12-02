@@ -11,7 +11,7 @@ const { image, imageAlt = "", phrases, imagePosition = 'right' } = Astro.props;
 const isImageRight = imagePosition === 'right';
 ---
 
-<section class="relative">
+<section class="relative py-16 2xl:py-20">
 	<div class:list={[
 		"grid grid-cols-1 md:grid-cols-12",
 		isImageRight ? "" : "md:grid-flow-col-dense"
@@ -23,7 +23,7 @@ const isImageRight = imagePosition === 'right';
 		]}>
 			<div class="space-y-4">
 				{phrases.map((phrase) => (
-					<p class="pl-4 md:pl-8 lg:pl-16 bg-linear-to-r from-verde-deg-1 from-10% to-verde-deg-2 text-white py-4 px-6 text-xl md:text-2xl lg:text-4xl font-medium">
+					<p class="pl-4 md:pl-8 lg:pl-16 bg-linear-to-r from-verde-deg-1 from-10% to-verde-deg-2 text-white py-4 px-6 text-xl md:text-2xl lg:text-3xl 2xl:text-4xl font-medium">
 						{phrase}
 					</p>
 				))}

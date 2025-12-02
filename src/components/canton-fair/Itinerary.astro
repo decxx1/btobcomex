@@ -10,16 +10,16 @@ import ItineraryItem from "./ItineraryItem.astro";
 			<img 
 				src="/assets/elements/arrow-right-black.svg" 
 				alt="" 
-				class="absolute top-1/2 -translate-y-1/2 -left-72 w-64 h-auto opacity-20"
+				class="hidden 2xl:block absolute top-1/2 -translate-y-1/2 -left-72 w-64 h-auto opacity-20"
 			/>
-			<h2 class="text-4xl md:text-5xl lg:text-6xl font-light italic text-semi-black mb-12">
+			<h2 class="text-4xl xl:text-5xl 2xl:text-6xl font-light italic text-semi-black mb-12">
 				ITINERARIO
 			</h2>
 		</section>
 		
 
 		<!-- Itinerary Items -->
-		<div class="space-y-8 max-w-3xl">
+		<div class="space-y-6 2xl:space-y-8 max-w-3xl">
 			<!-- Duration -->
 			<ItineraryItem
 			 image="/assets/icons/travel/calendar.svg"	
@@ -71,7 +71,7 @@ import ItineraryItem from "./ItineraryItem.astro";
 	</div>
 
 	<!-- Info Cards -->
-	<div class="container mx-auto px-4 md:px-12 mt-16 space-y-8">
+	<div class="container mx-auto px-4 md:px-12 mt-16 space-y-4 2xl:space-y-8">
 		<!-- Card 1 -->
 		<InfoCard title="¿A quién está dirigido el viaje?">
 			<p class="text-lg md:text-xl font-medium">
@@ -88,7 +88,7 @@ import ItineraryItem from "./ItineraryItem.astro";
 
 		<!-- Card 3 -->
 		<InfoCard title="Sus beneficios" hasBullets={true}>
-			<ul class="space-y-3 text-lg md:text-xl font-medium">
+			<ul class="space-y-2 2xl:space-y-3 text-lg md:text-xl font-medium">
 				<li class="flex items-start gap-3">
 					<span class="w-16 h-1 bg-linear-to-r from-white to-rojo-deg-1 mt-3 shrink-0"></span>
 					<span>Acceso a una diversa gama de proveedores especializados e industrias en un recinto ferial, lo que acelera procesos de compra y permite impulsar nuevas líneas de negocio.</span>

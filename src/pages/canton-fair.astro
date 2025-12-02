@@ -1,7 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Hero from "@/components/Hero.astro";
-import WhatsAppButton from "@/components/WhatsAppButton.astro";
 import HeaderTitle from "@/components/HeaderTitle.astro";
 import CTAExperience from "@/components/canton-fair/CTAExperience.astro";
 import ProgramForm from "@/components/canton-fair/ProgramForm.astro";
@@ -30,8 +29,6 @@ const preloadImages = [
 		showBottomBar={true}
 	/>
 
-	<WhatsAppButton />
-
 	<HeaderTitle title="FERIA DE CANTÓN" isRed={true} />
 	
 	<CTAExperience />
@@ -41,7 +38,7 @@ const preloadImages = [
 		<img
 			src='/assets/images/hermosa-arquitectura-de-la-ciudad-de-taipei.jpg'
 			alt=""
-			class="w-full h-auto -z-10 absolute -top-96 left-0 scale-x-[-1] object-cover object-top-left"
+			class="w-full h-auto -z-10 absolute -top-40 2xl:-top-80 left-0 scale-x-[-1] object-cover object-top-left"
 		/>
 	</section>
 	

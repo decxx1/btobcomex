@@ -2,61 +2,59 @@
 import PhaseCard from "./PhaseCard.astro";
 
 // Datos de las fases
-const phase1Products = `Electrodomésticos del hogar. 
-Productos electrónicos de consumo 
-e información. 
-Automatización industrial y manufactura
-inteligente.
-Equipos de procesamiento de maquinaria. 
-Máquinas de energía y potencia eléctrica. 
-Maquinaria agrícola, de construcción.  
-Vehículos. Repuestos de vehículos. 
-Nuevos vehículos de energía y movilidad 
-inteligente. 
-Motocicletas. Bicicletas. 
-Recursos de nueva energía. 
-Iluminación. Productos y equipos eléctricos
-y electrónicos. 
-Nuevos materiales y productos químicos.
-Herramientas. Ferretería`;
+const phase1Products = `Electrodomésticos del hogar.<br>
+Productos electrónicos de consumo e información.<br>
+Automatización industrial y manufactura inteligente.<br>
+Equipos de procesamiento de maquinaria.<br>
+Máquinas de energía y potencia eléctrica.<br>
+Maquinaria agrícola, de construcción. <br>
+Vehículos.<br>
+Repuestos de vehículos. <br>
+Nuevos vehículos de energía y movilidad inteligente. <br>
+Motocicletas.<br>
+Bicicletas. <br>
+Recursos de nueva energía. <br>
+Iluminación.<br>
+Productos y equipos eléctricos y electrónicos. <br>
+Nuevos materiales y productos químicos.<br>
+Herramientas. <br>
+Ferretería`;
 
-const phase2Products = `Cerámica general. Vajilla y utensilios de 
-cocina.
-Artículos para el hogar. Cristalería. 
-Decoraciones del hogar.
-Productos de jardinería. Productos de 
-festival.
-Regalos y premios. Relojes y óptica.
-Cerámica artística.
-Productos de tejido, ratán y hierro.
-Materiales de construcción y decoración.
-Equipos sanitarios y de baño.
-Muebles. Decoración de piedra/hierro y 
-equipos de spa al aire libre.`;
+const phase2Products = `Cerámica general.<br>
+Vajilla y utensilios de cocina.<br>
+Artículos para el hogar.<br>
+Cristalería. <br>
+Decoraciones del hogar.<br>
+Productos de jardinería. Productos de festival.<br>
+Regalos y premios. Relojes y óptica.<br>
+Cerámica artística.<br>
+Productos de tejido, ratán y hierro.<br>
+Materiales de construcción y decoración.<br>
+Equipos sanitarios y de baño.<br>
+Muebles. Decoración de piedra/hierro y equipos de spa al aire libre.`;
 
-const phase3Products = `Juguetes. Ropa para niños, bebés y 
-maternidad. Ropa para niños.
-Ropa y prendas deportivas. Ropa para 
-hombre y mujer.
-Productos de piel, cuero, plumón y 
-relacionados. Materias primas textiles y telas.
-Zapatos. Textiles para el hogar. Alfombras 
-y tapices.
-Productos de salud, medicina y dispositivos 
-médicos.
-Alimentos.
-Productos de cuidado y aseo personal.
-Accesorios y artículos de moda.
-Bolsos y maletas.
-Suministros de oficina
-Productos para mascotas y alimentos.
+const phase3Products = `Juguetes.<br>
+Ropa para niños, bebés y maternidad.<br>
+Ropa para niños.<br>
+Ropa y prendas deportivas. Ropa para hombre y mujer.<br>
+Productos de piel, cuero, plumón y relacionados.<br>
+Materias primas textiles y telas.<br>
+Zapatos. Textiles para el hogar.<br>
+Alfombras y tapices.<br>
+Productos de salud, medicina y dispositivos médicos.<br>
+Alimentos.<br>
+Productos de cuidado y aseo personal.<br>
+Accesorios y artículos de moda.<br>
+Bolsos y maletas.<br>
+Suministros de oficina.<br>
+Productos para mascotas y alimentos.<br>
 Productos de deporte, viaje y recreación.`;
 ---
 
-<section class="pb-16 lg:pb-24 pt-8 md:pt-16 bg-white">
+<section class="pb-16 lg:pb-24 pt-8 xl:pt-2 2xl:pt-8 bg-white">
 	<!-- Header -->
 	<header class="bg-semi-black py-12 mb-14">
-		<section class="container mx-auto flex flex-col md:flex-row items-center md:justify-between gap-6">
+		<section class="container mx-auto xl:px-8 flex flex-col md:flex-row items-center md:justify-between gap-6">
 			<h2 class="text-3xl md:text-4xl lg:text-5xl text-white italic">
 				<span class="font-light">Fechas y fases de la</span><br />
 				<span class="font-bold">Feria de Cantón 2026</span>
@@ -86,8 +84,8 @@ Productos de deporte, viaje y recreación.`;
 		<!-- Primavera Content -->
 		<div id="content-primavera" class="tab-content">
 			<!-- Season Title -->
-			<div class="bg-verde-deg-2 py-4 px-6 text-center mb-1">
-				<h3 class="text-xl font-bold text-white tracking-wider">PRIMAVERA</h3>
+			<div class="bg-verde-deg-2 py-4 px-6 text-center mb-4">
+				<h3 class="text-2xl font-bold text-white tracking-wider">PRIMAVERA</h3>
 			</div>
 
 			<PhaseCard 
@@ -113,8 +111,8 @@ Productos de deporte, viaje y recreación.`;
 		<!-- Otoño Content -->
 		<div id="content-otono" class="tab-content hidden">
 			<!-- Season Title -->
-			<div class="bg-crema-deg-1 py-4 px-6 text-center mb-1">
-				<h3 class="text-xl font-bold text-verde-deg-1 tracking-wider">OTOÑO</h3>
+			<div class="bg-crema-deg-1 py-4 px-6 text-center mb-4">
+				<h3 class="text-2xl font-bold text-verde-deg-1 tracking-wider">OTOÑO</h3>
 			</div>
 
 			<PhaseCard 
