@@ -11,7 +11,7 @@ const { image, imageAlt = "", phrases, imagePosition = 'right' } = Astro.props;
 const isImageRight = imagePosition === 'right';
 ---
 
-<section class="relative py-16 2xl:py-20">
+<section class="relative py-8 md:py-16 2xl:py-20">
 	<div class:list={[
 		"grid grid-cols-1 md:grid-cols-12",
 		isImageRight ? "" : "md:grid-flow-col-dense"
@@ -23,7 +23,7 @@ const isImageRight = imagePosition === 'right';
 		]}>
 			<div class="space-y-4">
 				{phrases.map((phrase) => (
-					<p class="pl-4 lg:pl-8 xl:pl-16 bg-linear-to-r from-verde-deg-1 from-10% to-verde-deg-2 text-white py-4 px-6 text-xl lg:text-2xl xl:text-3xl font-medium">
+					<p class="pl-4 lg:pl-8 xl:pl-16 bg-linear-to-r from-verde-deg-1 from-10% to-verde-deg-2 text-white py-4 px-6 text-lg md:text-xl lg:text-2xl xl:text-3xl font-medium">
 						{phrase}
 					</p>
 				))}
@@ -32,13 +32,13 @@ const isImageRight = imagePosition === 'right';
 
 		<!-- Image -->
 		<div class:list={[
-			"md:col-span-4 relative min-h-[300px] md:min-h-[400px]",
+			"md:col-span-4 relative min-h-96 md:min-h-[400px]",
 			isImageRight ? "md:order-2" : "md:order-1"
 		]}>
 			<img
 				src={image}
 				alt={imageAlt}
-				class="w-full h-full object-cover"
+				class="w-full h-96 md:h-full object-cover"
 			/>
 			<!-- Gradient overlay -->
 			<div class:list={[
