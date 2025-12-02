@@ -3,7 +3,7 @@ import InfoCard from "./InfoCard.astro";
 import ItineraryItem from "./ItineraryItem.astro";
 ---
 
-<section class="py-16 lg:py-24 relative">
+<section class="py-16 xl:py-24 relative">
 	<div class="container mx-auto px-4 md:px-12">
 		<!-- Title -->
 		<section class="relative">
@@ -19,7 +19,7 @@ import ItineraryItem from "./ItineraryItem.astro";
 		
 
 		<!-- Itinerary Items -->
-		<div class="space-y-6 2xl:space-y-8 max-w-3xl">
+		<div class="space-y-4 xl:space-y-6 2xl:space-y-8 xl:max-w-3xl grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-1">
 			<!-- Duration -->
 			<ItineraryItem
 			 image="/assets/icons/travel/calendar.svg"	
@@ -61,34 +61,33 @@ import ItineraryItem from "./ItineraryItem.astro";
 			 title="VUELO:"
 			 description="Hong Kong – Conexión (París - Francia) - Llegada a Chile"
 			/>
-
-		<!-- Disclaimer -->
-		<div class="mt-12 ml-8 md:ml-16">
-			<span class="border border-semi-black px-4 py-2 text-sm text-semi-black">
-				* Sujeto a modificaciones
-			</span>
-		</div>
+	</div>
+	<!-- Disclaimer -->
+	<div class="mt-12 ml-8 md:ml-16">
+		<span class="border border-semi-black px-4 py-2 text-sm text-semi-black">
+			* Sujeto a modificaciones
+		</span>
 	</div>
 
 	<!-- Info Cards -->
 	<div class="container mx-auto px-4 md:px-12 mt-16 space-y-4 2xl:space-y-8">
 		<!-- Card 1 -->
 		<InfoCard title="¿A quién está dirigido el viaje?">
-			<p class="text-lg md:text-xl font-medium">
+			<p class="text-lg md:text-xl font-light xl:font-medium">
 				A empresas, emprendedores, pymes o dueños que buscan dar sus primeros pasos en la importación, adquirir productos sin intermediarios, aumentar márgenes de ganancia o crear vínculos comerciales sostenibles.
 			</p>
 		</InfoCard>
 
 		<!-- Card 2 -->
 		<InfoCard title="¿Por qué es tan importante asistir a la Feria de Cantón?">
-			<p class="text-lg md:text-xl font-medium">
+			<p class="text-lg md:text-xl font-light xl:font-medium">
 				La Feria de Cantón es el evento comercial más importante de China y uno de los más influyentes a nivel mundial. Ocurre dos veces al año, en primavera y en otoño, en la ciudad de Guangzhou, provincia de Guangdong. Desde su inicio en 1957, ha sido una instancia de encuentro entre compradores y fabricantes de todo el mundo.
 			</p>
 		</InfoCard>
 
 		<!-- Card 3 -->
 		<InfoCard title="Sus beneficios" hasBullets={true}>
-			<ul class="space-y-2 2xl:space-y-3 text-lg md:text-xl font-medium">
+			<ul class="space-y-2 2xl:space-y-3 text-lg md:text-xl font-light xl:font-medium">
 				<li class="flex items-start gap-3">
 					<span class="w-16 h-1 bg-linear-to-r from-white to-rojo-deg-1 mt-3 shrink-0"></span>
 					<span>Acceso a una diversa gama de proveedores especializados e industrias en un recinto ferial, lo que acelera procesos de compra y permite impulsar nuevas líneas de negocio.</span>
