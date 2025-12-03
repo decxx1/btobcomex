@@ -15,6 +15,8 @@
   --color-crema-deg-1: #f4eddd;
   --color-crema: #dfc39f;
   --color-semi-black: #070707;
+  
+  --breakpoint-xs: 30rem;
 }
 
 @utility shadow-xx {

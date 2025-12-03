@@ -5,7 +5,7 @@
 <footer
 	class="bg-linear-to-r from-verde-deg-1 to-verde-deg-2 text-white py-8 lg:py-10 2xl:py-16 font-montserrat"
 >
-	<div class="container mx-auto px-4 md:px-12">
+	<div class="container mx-auto px-4 md:px-12 max-sm:mb-20">
 		<div
 			class="flex flex-col md:flex-row justify-between items-center mb-10 md:mb-16 xl:mb-20 2xl:mb-24 gap-8"
 		>
@@ -45,28 +45,37 @@
 		</div>
 
 		<!-- Contact Info -->
-		<div class="flex flex-col items-center gap-6 mb-8 xl:mb-10 2xl:mb-16">
+		<div class="flex flex-col items-center gap-6 mb-6 sm:mb-8 xl:mb-10 2xl:mb-16">
 			<div
-				class="flex flex-col md:flex-row items-center gap-3 text-xl xl:text-2xl 2xl:text-3xl font-light"
+				class="flex flex-col md:flex-row items-center gap-3 text-lg sm:text-xl xl:text-2xl 2xl:text-3xl font-light"
 			>
-				<div class="flex gap-3">
-					<img
-						src="/assets/icons/contact/icon-tel.svg"
-						alt="Teléfono"
-						class="size-6 xl:size-8 2xl:size-10"
-					/>
-					<span>+54 9 261 4534280</span>
-					<span>/</span>
-					<span>+54 9 261 5260461</span>
+				<div class="flex max-sm:flex-col gap-3">
+					<div class="inline-flex gap-2">
+						<img
+							src="/assets/icons/contact/icon-tel.svg"
+							alt="Teléfono"
+							class="size-4 sm:size-6 xl:size-8 2xl:size-10"
+						/>
+						<span>+54 9 261 4534280</span>
+					</div>
+					<span class="hidden sm:block">/</span>
+					<div class="inline-flex gap-2">
+						<img
+							src="/assets/icons/contact/icon-tel.svg"
+							alt="Teléfono"
+							class="sm:hidden size-4 sm:size-6 xl:size-8 2xl:size-10"
+						/>
+						<span>+54 9 261 5260461</span>
+					</div>
 				</div>
 			</div>
 			<div
-				class="flex items-center gap-4 text-xl xl:text-2xl 2xl:text-3xl font-light"
+				class="flex items-center gap-4 text-lg sm:text-xl xl:text-2xl 2xl:text-3xl font-light"
 			>
 				<img
 					src="/assets/icons/contact/icon-email.svg"
 					alt="Email"
-					class="size-6 xl:size-8 2xl:size-10"
+					class="size-4 sm:size-6 xl:size-8 2xl:size-10"
 				/>
 				<a href="mailto:info@btobcomex.com" class="hover:underline"
 					>info@btobcomex.com</a
@@ -76,7 +85,7 @@
 
 		<!-- Website -->
 		<div
-			class="text-center text-2xl xl:text-3xl 2xl:text-4xl tracking-widest font-light"
+			class="text-center text-xl sm:text-2xl xl:text-3xl 2xl:text-4xl sm:tracking-widest font-light"
 		>
 			www.btobcomex.com
 		</div>

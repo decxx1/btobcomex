@@ -16,14 +16,14 @@ const isSpring = variant === 'spring';
 	<!-- Columna 1 -->
 	<div class="md:col-span-2 h-full grid grid-rows-[auto_1fr]">
 		<div class:list={[
-			"text-lg xl:text-xl font-semibold py-4 px-6 text-center md:mb-1 md:bg-linear-to-b",
+			"text-base sm:text-lg xl:text-xl font-semibold py-4 px-6 text-center md:mb-1 md:bg-linear-to-b",
 			isSpring ? "text-white border-white/20 max-md:bg-verde-deg-1 from-verde-deg-1 to-verde-deg-2" : "text-verde-deg-1 border-verde-deg-1/20 max-md:bg-crema from-crema-deg-1 to-crema"
 		]}>
 			Sesión / Fase
 		</div>
 
 		<div class:list={[
-			"text-base xl:text-lg font-light py-6 px-6 text-center md:bg-linear-to-b h-full",
+			"text-sm sm:text-base xl:text-lg font-light py-6 px-6 text-center md:bg-linear-to-b h-full",
 			isSpring ? "text-white border-white/20 max-md:bg-verde-deg-2 from-verde-deg-1 to-verde-deg-2" : "text-verde-deg-1 border-verde-deg-1/20  max-md:bg-crema-deg-1 from-crema-deg-1 to-crema"
 		]}>
 			{phase}
@@ -33,14 +33,14 @@ const isSpring = variant === 'spring';
 	<!-- Columna 2 -->
 	<div class="md:col-span-2 h-full grid grid-rows-[auto_1fr]">
 		<div class:list={[
-			"text-lg xl:text-xl font-semibold py-4 px-6 text-center md:mb-1 md:bg-linear-to-b",
+			"text-base sm:text-lg xl:text-xl font-semibold py-4 px-6 text-center md:mb-1 md:bg-linear-to-b",
 			isSpring ? "text-white border-white/20 max-md:bg-verde-deg-1 from-verde-deg-1 to-verde-deg-2" : "border-verde-deg-1/20 max-md:bg-crema from-crema-deg-1 to-crema"
 		]}>
 			Fechas
 		</div>
 
 		<div class:list={[
-			"text-base xl:text-lg font-light py-6 px-6 text-center md:bg-linear-to-b h-full",
+			"text-sm sm:text-base xl:text-lg font-light py-6 px-6 text-center md:bg-linear-to-b h-full",
 			isSpring ? "text-white border-white/20 max-md:bg-verde-deg-2 from-verde-deg-1 to-verde-deg-2" : "text-verde-deg-1 border-verde-deg-1/20 max-md:bg-crema-deg-1 from-crema-deg-1 to-crema"
 		]}>
 			{dates}
@@ -50,14 +50,14 @@ const isSpring = variant === 'spring';
 	<!-- Columna 3 -->
 	<div class="md:col-span-8 h-full grid grid-rows-[auto_1fr]">
 		<div class:list={[
-			"text-lg xl:text-xl font-semibold py-4 px-6 text-center md:mb-1 md:bg-linear-to-b",
+			"text-base sm:text-lg xl:text-xl font-semibold py-4 px-6 text-center md:mb-1 md:bg-linear-to-b",
 			isSpring ? "text-white border-white/20 max-md:bg-verde-deg-1 from-verde-deg-1 to-verde-deg-2" : "text-verde-deg-1 border-verde-deg-1/20 max-md:bg-crema from-crema-deg-1 to-crema"
 		]}>
 			Productos / sectores destacados
 		</div>
 
 		<div class:list={[
-			"text-base xl:text-lg font-light py-6 px-6 md:bg-linear-to-b h-full",
+			"text-sm sm:text-base xl:text-lg font-light py-6 px-6 md:bg-linear-to-b h-full",
 			isSpring ? "text-white border-white/20 max-md:bg-verde-deg-2 from-verde-deg-1 to-verde-deg-2" : "text-verde-deg-1 border-verde-deg-1/20 max-md:bg-crema-deg-1 from-crema-deg-1 to-crema"
 		]}>
 			<p set:html={products}></p>
