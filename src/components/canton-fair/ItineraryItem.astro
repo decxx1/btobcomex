@@ -11,10 +11,10 @@ const {
 	description,
 } = Astro.props;
 ---
-<div class="flex items-center sm:items-end gap-4 xl:gap-6">
-    <img src={image} alt={title} class="size-10 sm:size-14 xl:size-16" />
+<div class="flex items-center sm:items-end gap-4 ">
+    <img src={image} alt={title} class="size-10 sm:size-14" />
     <div>
-        <h3 class="font-bold text-semi-black text-lg sm:text-xl xl:text-2xl">{title}</h3>
-        <p class="text-semi-black text-base sm:text-lg xl:text-xl">{description}</p>
+        <h3 class="font-bold text-semi-black text-lg sm:text-xl">{title}</h3>
+        <p class="text-semi-black text-base sm:text-lg">{description}</p>
     </div>
 </div>

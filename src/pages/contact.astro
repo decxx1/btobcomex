@@ -1,6 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import Hero from "@/components/Hero.astro";
+import BreadCrumbs from "@/components/BreadCrumbs.astro";
 import HeaderTitle from "@/components/HeaderTitle.astro";
 import ContactInfo from "@/components/contact/ContactInfo.astro";
 
@@ -20,7 +20,7 @@ const preloadImages = [
 	metaImg="/assets/images/lisa-pared-de-estuco-gris.jpg"
 	preLoad={preloadImages}
 >
-	<Hero
+	<BreadCrumbs
 		bgImage="/assets/images/piedra-deg.png"
 		title="Tu puente entre <br /> el comercio y el mundo"
 		showBottomBar={false}

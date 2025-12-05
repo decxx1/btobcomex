@@ -1,0 +1,68 @@
+---
+interface Props {
+	bgImage?: string;
+	title?: string;
+	showBottomBar?: boolean;
+}
+
+const {
+	bgImage,
+	title,
+	showBottomBar,
+} = Astro.props;
+---
+
+<section class="relative h-[32rem] w-full overflow-hidden font-montserrat">
+	<!-- Background Image -->
+	<div class="absolute inset-0 z-0">
+		<img
+			src={bgImage}
+			alt="Hero Background"
+			class="w-full h-full object-cover"
+		/>
+		<!-- Dark Overlay -->
+		<div class="absolute inset-0 mask-b-from-10% mask-b-to-60% bg-black/70">
+		</div>
+	</div>
+
+	<!-- Right Arrow Mask Overlay -->
+	<!-- Positioned absolutely to the right, taking up full height -->
+	<div
+		class="absolute top-0 right-0 h-full w-[60%] lg:w-[40%] z-10 pointer-events-none hidden md:block"
+	>
+		<img
+			src="/assets/elements/arrow-right.svg"
+			alt="elemento decorativo"
+			class="h-full w-full object-cover object-left opacity-20 mix-blend-multiply"
+		/>
+	</div>
+
+	<!-- Content -->
+	<div
+		class="relative z-20 container mx-auto h-full flex flex-col justify-center px-4 md:px-12 text-white pt-20"
+	>
+		<h1
+			class="max-sm:text-center text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold leading-tight max-w-3xl xl:max-w-4xl shadow-xx"
+			set:html={title}
+		/>
+	</div>
+
+	<!-- Bottom Elements -->
+	{
+		showBottomBar && (
+			<div class="absolute bottom-0 left-0 w-full z-30">
+				<div class="container mx-auto flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-12 pb-12 md:pb-16">
+					<!-- Anniversary Badge (Red Bar) -->
+					<div class="relative flex items-center">
+						<div class="inline -ml-64 -mr-20 h-12 xl:h-16 w-96" />
+						<img
+							src="/assets/elements/140Aniversary.svg"
+							alt="140 Aniversario"
+							class="h-16 xl:h-20"
+						/>
+					</div>
+				</div>
+			</div>
+		)
+	}
+</section>
