@@ -82,7 +82,7 @@ const {
 </section>
 
 <script>
-	document.addEventListener('DOMContentLoaded', () => {
+	document.addEventListener('astro:page-load', () => {
 		const slides = document.querySelectorAll<HTMLImageElement>('.carousel-slide');
 		if (slides.length <= 1) return;
 
