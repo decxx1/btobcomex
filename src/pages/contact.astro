@@ -3,6 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import BreadCrumbs from "@/components/BreadCrumbs.astro";
 import HeaderTitle from "@/components/HeaderTitle.astro";
 import ContactInfo from "@/components/contact/ContactInfo.astro";
+import { SITE_KEY } from "astro:env/client";
 
 const preloadImages = [
 	{
@@ -15,7 +16,7 @@ const preloadImages = [
 
 <Layout
 	title="B TO B Comex - Contacto"
-	canonical=""
+	canonical="https://btobcomex.com/contact"
 	metaDescription="Contactá con B TO B Comex para consultas sobre comercio internacional."
 	metaImg="/assets/images/piedra-deg.webp"
 	preLoad={preloadImages}
@@ -30,3 +31,6 @@ const preloadImages = [
 	
 	<ContactInfo />
 </Layout>
+
+<!-- recaptcha v3 -->
+<script async src={'https://www.google.com/recaptcha/api.js?render=' + SITE_KEY} data-astro-rerun></script>

@@ -1,9 +1,11 @@
 ---
+import { SOCIAL_WHATSAPP_URL } from "astro:env/client";
 
+const whatsappUrl = SOCIAL_WHATSAPP_URL ?? "";
 ---
 
 <a
-	href="https://wa.me/5492614534280"
+	href={whatsappUrl}
 	target="_blank"
 	rel="noopener noreferrer"
 	class="fixed bottom-8 right-8 z-50 inline-flex items-center transition-all hover:-translate-y-1 group"

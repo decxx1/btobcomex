@@ -6,19 +6,20 @@ import CTAExperience from "@/components/canton-fair/CTAExperience.astro";
 import ProgramForm from "@/components/canton-fair/ProgramForm.astro";
 import Itinerary from "@/components/canton-fair/Itinerary.astro";
 import FairSchedule from "@/components/canton-fair/FairSchedule.astro";
+import { SITE_KEY } from "astro:env/client";
 
 const preloadImages = [
 	{
 		href: "/assets/images/AAch03.webp",
 		as: "image",
-		type: "image/jpeg",
+		type: "image/webp",
 	},
 ];
 ---
 
 <Layout
 	title="B TO B Comex - Feria de Cantón"
-	canonical=""
+	canonical="https://btobcomex.com/canton-fair"
 	metaDescription="Conocé todo sobre la Feria de Cantón y cómo B TO B Comex puede ayudarte."
 	metaImg="/assets/images/AAch03.webp"
 	preLoad={preloadImages}
@@ -46,3 +47,6 @@ const preloadImages = [
 	
 	<FairSchedule />
 </Layout>
+
+<!-- recaptcha v3 -->
+<script async src={'https://www.google.com/recaptcha/api.js?render=' + SITE_KEY} data-astro-rerun></script>

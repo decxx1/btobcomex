@@ -1,5 +1,12 @@
 ---
 import ContactForm from "./ContactForm.astro";
+import { CONTACT_PHONE_1, CONTACT_PHONE_2, CONTACT_EMAIL, CONTACT_ADDRESS_1, CONTACT_ADDRESS_2 } from "astro:env/client";
+
+const phone1 = CONTACT_PHONE_1 ?? "";
+const phone2 = CONTACT_PHONE_2 ?? "";
+const email = CONTACT_EMAIL ?? "";
+const address1 = CONTACT_ADDRESS_1 ?? "";
+const address2 = CONTACT_ADDRESS_2 ?? "";
 ---
 
 <section class="relative bg-linear-to-t from-crema-deg-1 from-0% to-verde-deg-1 py-16 lg:py-24 overflow-hidden">
@@ -20,30 +27,30 @@ import ContactForm from "./ContactForm.astro";
 			<div>
 				<!-- Información de Contacto -->
 				<div class="text-center mb-16">
-					<h2 class="text-lg md:text-2xl lg:text-3xl font-bold text-white mb-10">
+					<h2 class="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-10">
 						Información
 					</h2>
 
-					<div class="space-y-4 max-w-2xl mx-auto font-semibold">
+					<div class="space-y-4 max-w-2xl mx-auto font-medium md:font-semibold">
 						<!-- Teléfonos -->
 						<div class="flex items-center justify-center gap-2 sm:gap-4">
 							<img src="/assets/icons/contact/icon-phone.svg" alt="Teléfono" class="w-6 h-6" />
 							<p class="text-white text-base md:text-lg">
-								+54 9 261 4534280
+								{phone1}
 							</p>
 						</div>
 						<div class="flex items-center justify-center gap-2 sm:gap-4">
 							<img src="/assets/icons/contact/icon-phone.svg" alt="Teléfono" class="w-6 h-6" />
 							<p class="text-white text-base md:text-lg">
-								+54 9 261 5260461
+								{phone2}
 							</p>
 						</div>
 
 						<!-- Email -->
 						<div class="flex items-center justify-center gap-4">
 							<img src="/assets/icons/contact/icon-email.svg" alt="Email" class="w-6 h-6" />
-							<a href="mailto:info@btobcomex.com" class="text-white text-base md:text-lg hover:underline">
-								info@btobcomex.com
+							<a href={`mailto:${email}`} class="text-white text-base md:text-lg hover:underline">
+								{email}
 							</a>
 						</div>
 					</div>
@@ -52,17 +59,16 @@ import ContactForm from "./ContactForm.astro";
 				<!-- Dirección -->
 				<div class="text-center mt-16 relative">
 					
-					<h2 class="text-lg md:text-2xl lg:text-3xl font-bold text-white mb-8">
+					<h2 class="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-8">
 						Dirección
 					</h2>
 
-					<div class="space-y-6 max-w-3xl mx-auto font-semibold">
+					<div class="space-y-6 max-w-xl mx-auto font-medium md:font-semibold">
 						<!-- Chile -->
 						<div class="inline-flex items-center gap-4">
 							<img src="/assets/icons/contact/icon-map.svg" alt="Ubicación" class="w-6 h-6 mt-1" />
 							<p class="text-white text-base md:text-lg text-left">
-								Oficina en Chile: Los Militares 5620 Oficina 905,<br />
-								Las Condes, Región Metropolitana de Santiago.
+								{address1}
 							</p>
 						</div>
 						
@@ -70,7 +76,7 @@ import ContactForm from "./ContactForm.astro";
 						<div class="inline-flex items-center gap-4">
 							<img src="/assets/icons/contact/icon-map.svg" alt="Ubicación" class="w-6 h-6 mt-1" />
 							<p class="text-white text-base md:text-lg text-left">
-								Oficina en Argentina: Gibraltar 2825, Godoy Cruz, Mendoza.
+								{address2}
 							</p>
 						</div>
 					</div>
