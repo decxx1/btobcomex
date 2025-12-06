@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://btobcomex.com/sitemap-index.xml
+Sitemap: https://btobcomex.com.ar/sitemap-index.xml
+Sitemap: https://btobcomex.cl/sitemap-index.xml
