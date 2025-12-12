@@ -1,5 +1,6 @@
 ---
 import ContactForm from "./ContactForm.astro";
+import WechatInfo from "./WechatInfo.astro"
 import { CONTACT_PHONE_1, CONTACT_PHONE_2, CONTACT_EMAIL, CONTACT_ADDRESS_1, CONTACT_ADDRESS_2 } from "astro:env/client";
 
 const phone1 = CONTACT_PHONE_1 ?? "";
@@ -81,6 +82,8 @@ const address2 = CONTACT_ADDRESS_2 ?? "";
 						</div>
 					</div>
 				</div>
+				<WechatInfo />
+				
 			</div>
 
 			<!-- Columna derecha: Formulario -->
