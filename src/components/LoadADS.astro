@@ -36,7 +36,7 @@ src="https://www.facebook.com/tr?id=1345109823564176&ev=PageView&noscript=1"
 <!-- End Google Tag Manager -->
 
 <script is:inline>
-  document.addEventListener('astro:after-swap', () => {
+  document.addEventListener('astro:page-load', () => {
     if (!window.dataLayer) return;
     
     window.dataLayer.push({
