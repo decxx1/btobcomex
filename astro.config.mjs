@@ -42,6 +42,7 @@ export default defineConfig({
       ENDPOINT: envField.string({ context: "client", access: "public", optional: true }),
       CONTACT_PHONE_1: envField.string({ context: "client", access: "public", optional: true }),
       CONTACT_PHONE_2: envField.string({ context: "client", access: "public", optional: true }),
+      CONTACT_PHONE_3: envField.string({ context: "client", access: "public", optional: true }),
       CONTACT_EMAIL: envField.string({ context: "client", access: "public", optional: true }),
       CONTACT_WEBSITE: envField.string({ context: "client", access: "public", optional: true }),
       SOCIAL_LINKEDIN_URL: envField.string({ context: "client", access: "public", optional: true }),

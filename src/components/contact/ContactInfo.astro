@@ -1,10 +1,11 @@
 ---
 import ContactForm from "./ContactForm.astro";
 import WechatInfo from "./WechatInfo.astro"
-import { CONTACT_PHONE_1, CONTACT_PHONE_2, CONTACT_EMAIL, CONTACT_ADDRESS_1, CONTACT_ADDRESS_2 } from "astro:env/client";
+import { CONTACT_PHONE_1, CONTACT_PHONE_2, CONTACT_PHONE_3, CONTACT_EMAIL, CONTACT_ADDRESS_1, CONTACT_ADDRESS_2 } from "astro:env/client";
 
 const phone1 = CONTACT_PHONE_1 ?? "";
 const phone2 = CONTACT_PHONE_2 ?? "";
+const phone3 = CONTACT_PHONE_3 ?? "";
 const email = CONTACT_EMAIL ?? "";
 const address1 = CONTACT_ADDRESS_1 ?? "";
 const address2 = CONTACT_ADDRESS_2 ?? "";
@@ -44,6 +45,13 @@ const address2 = CONTACT_ADDRESS_2 ?? "";
 							<img src="/assets/icons/contact/icon-phone.svg" alt="Teléfono" class="w-6 h-6" />
 							<p class="text-white text-base md:text-lg">
 								{phone2}
+							</p>
+						</div>
+
+						<div class="flex items-center justify-center gap-2 sm:gap-4">
+							<img src="/assets/icons/contact/icon-phone.svg" alt="Teléfono" class="w-6 h-6" />
+							<p class="text-white text-base md:text-lg">
+								{phone3}
 							</p>
 						</div>
 

@@ -1,8 +1,9 @@
 ---
-import { CONTACT_PHONE_1, CONTACT_PHONE_2, CONTACT_EMAIL, CONTACT_WEBSITE, SOCIAL_LINKEDIN_URL,SOCIAL_FACEBOOK_URL, SOCIAL_INSTAGRAM_URL } from "astro:env/client";
+import { CONTACT_PHONE_1, CONTACT_PHONE_2, CONTACT_PHONE_3, CONTACT_EMAIL, CONTACT_WEBSITE, SOCIAL_LINKEDIN_URL,SOCIAL_FACEBOOK_URL, SOCIAL_INSTAGRAM_URL } from "astro:env/client";
 
 const phone1 = CONTACT_PHONE_1 ?? "";
 const phone2 = CONTACT_PHONE_2 ?? "";
+const phone3 = CONTACT_PHONE_3 ?? "";
 const email = CONTACT_EMAIL ?? "";
 const website = CONTACT_WEBSITE ?? "";
 
@@ -39,7 +40,7 @@ const faceUrl = SOCIAL_FACEBOOK_URL ?? "";
 							<img
 								src="/assets/icons/contact/icon-tel.svg"
 								alt="Teléfono"
-								class="size-4 sm:size-6 xl:size-8"
+								class="size-4 sm:size-6"
 							/>
 							<a href={`tel:${phone1}`} class="hover:font-medium transition-all duration-300"
 							>{phone1}</a>
@@ -53,6 +54,21 @@ const faceUrl = SOCIAL_FACEBOOK_URL ?? "";
 							/>
 							<a href={`tel:${phone2}`} class="hover:font-medium transition-all duration-300"
 							>{phone2}</a>
+						</div>
+					</div>
+				</div>
+				<div
+					class="flex flex-col md:flex-row items-center gap-3 text-base sm:text-lg font-light"
+				>
+					<div class="flex max-2xl:flex-col gap-3">
+						<div class="inline-flex gap-2">
+							<img
+								src="/assets/icons/contact/icon-tel.svg"
+								alt="Teléfono"
+								class="size-4 sm:size-6"
+							/>
+							<a href={`tel:${phone3}`} class="hover:font-medium transition-all duration-300"
+							>{phone3}</a>
 						</div>
 					</div>
 				</div>
