@@ -2,24 +2,29 @@
 interface Partner {
 	name: string;
 	logo: string;
+	link: string;
 }
 
 const partners: Partner[] = [
 	{
 		name: "Pronave",
 		logo: "/assets/logos/partners/logo-pronave.svg",
+		link: "https://www.pronave.com.ar/",
 	},
 	{
 		name: "Tahan",
 		logo: "/assets/logos/partners/tahan.svg",
+		link: "https://empresastahan.com/",
 	},
 	{
 		name: "Capromim",
 		logo: "/assets/logos/partners/logo-capromim.svg",
+		link: "https://www.capromim.com/capromim",
 	},
 	{
 		name: "Marpacifico",
 		logo: "/assets/logos/partners/logo-marpacifico.svg",
+		link: "https://www.marpacifico.com",
 	}
 ];
 ---
@@ -28,13 +33,15 @@ const partners: Partner[] = [
 	<div class="container mx-auto px-4 md:px-12">
 		<div class="flex flex-wrap items-center justify-center gap-12 lg:gap-16">
 			{partners.map((partner) => (
-				<img 
-					src={partner.logo} 
-					alt={partner.name} 
-					class={partner.name === "Marpacifico" 
-						? "w-32 md:w-36 lg:w-44 h-auto max-h-12 md:max-h-14 lg:max-h-20 aspect-auto" 
-						: "w-24 md:w-28 lg:w-36 h-auto max-h-10 md:max-h-12 lg:max-h-16 aspect-auto"}
-				/>
+				<a href={partner.link} rel="noopener noreferrer" target="_blank" class="hover:scale-110 transition-all duration-300">
+					<img 
+						src={partner.logo} 
+						alt={partner.name} 
+						class={partner.name === "Marpacifico" 
+							? "w-32 md:w-36 lg:w-44 h-auto max-h-12 md:max-h-14 lg:max-h-20 aspect-auto" 
+							: "w-24 md:w-28 lg:w-36 h-auto max-h-10 md:max-h-12 lg:max-h-16 aspect-auto"}
+					/>
+				</a>
 			))}
 		</div>
 	</div>
