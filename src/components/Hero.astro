@@ -1,4 +1,5 @@
 ---
+import CantonLogo from "@/components/CantonLogo.astro";
 interface Props {
 	bgImage?: string;
 	title?: string;
@@ -53,8 +54,10 @@ const {
 			<div class="absolute bottom-0 left-0 w-full z-30">
 				<div class="container mx-auto flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-12 pb-12 md:pb-16">
 					<!-- Anniversary Badge (Red Bar) -->
-					<div class="relative flex items-center">
+					<div class="relative flex flex-col md:flex-row items-center gap-6">
 						<div class="inline -ml-64 -mr-20 h-12 xl:h-16 w-96" />
+						
+						<CantonLogo />
 						<img
 							src="/assets/elements/140Aniversary.svg"
 							alt="140 Aniversario"
