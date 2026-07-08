@@ -1,0 +1,51 @@
+---
+import ContactForm from "../contact/ContactForm.astro";
+---
+
+<section class="bg-crema relative overflow-visible pb-12 sm:pb-16 lg:pb-20">
+	<div class="relative mx-4 sm:mx-8 md:mx-12 lg:mx-auto lg:max-w-6xl overflow-visible">
+		<div class="relative bg-linear-to-b from-verde-deg-1 to-verde-deg-2 py-6 sm:py-8 lg:py-16">
+			<div class="container mx-auto px-4 md:px-8 lg:px-12">
+				<div class="grid grid-cols-1 lg:grid-cols-2 items-start gap-6 lg:gap-8">
+					<!-- Left Column -->
+					<div class="text-white flex flex-col gap-8 lg:min-h-112">
+						<div>
+							<h2 class="max-sm:text-center text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-6 sm:mb-8 leading-tight">
+								Más que un agente de compras
+							</h2>
+
+							<div class="space-y-4 text-sm md:text-base lg:text-lg font-medium leading-relaxed">
+								<p>
+									Importar desde China implica elegir proveedores confiables, minimizar riesgos y construir relaciones comerciales sólidas.
+								</p>
+								<p>
+									Nuestra presencia en Yiwu y nuestro acompañamiento en español nos permiten ofrecer una experiencia más segura, transparente y eficiente para cada proyecto.
+								</p>
+							</div>
+						</div>
+
+						<div class="mt-auto relative">
+							<div class="bg-linear-to-r from-white/40 to-transparent py-3 sm:py-4 px-4 sm:px-6">
+								<p class="text-lg sm:text-xl md:text-2xl lg:text-4xl font-medium text-right sm:text-center lg:text-right">
+									¿Querés importar <br class="block sm:hidden lg:block" /> desde Yiwu?
+								</p>
+							</div>
+							<img
+								src="/assets/icons/yiwu/card-market.svg"
+								alt="icono tienda de comercio"
+								class="absolute -left-28 sm:-left-28 md:-left-36 lg:-left-28 -bottom-4 sm:-bottom-8 lg:-bottom-20 xl:-bottom-28 translate-y-[20%] w-44 sm:w-52 md:w-64 lg:w-80 xl:w-96 z-20 pointer-events-none"
+							/>
+						</div>
+					</div>
+
+					<!-- Right Column - Contact Form -->
+					<div class="flex justify-center lg:justify-end">
+						<ContactForm />
+					</div>
+				</div>
+			</div>
+		</div>
+
+		
+	</div>
+</section>

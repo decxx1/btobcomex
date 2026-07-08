@@ -1,0 +1,61 @@
+---
+const steps = [
+	{
+		title: "1. Planificamos:",
+		description: "analizamos tus objetivos y el producto que buscás.",
+	},
+	{
+		title: "2. Buscamos y validamos:",
+		description: "seleccionamos proveedores confiables y presentamos alternativas.",
+	},
+	{
+		title: "3. Gestionamos:",
+		description: "coordinamos la producción y realizamos el seguimiento del pedido.",
+	},
+	{
+		title: "4. Controlamos:",
+		description: "inspeccionamos la mercadería y consolidamos la carga.",
+	},
+	{
+		title: "5. Coordinamos el embarque:",
+		description: "trabajamos junto a tu operador logístico para preparar la exportación.",
+	},
+	{
+		title: "6. Te acompañamos hasta el final:",
+		description: "realizamos el seguimiento de la operación y damos soporte ante cualquier necesidad.",
+	},
+];
+---
+
+<section class="my-0">
+	<!-- Header -->
+	<div class="relative z-20 overflow-visible bg-linear-to-r from-verde-deg-1 via-verde-deg-2 to-white pt-8 pb-4 sm:pt-12 sm:pb-6 px-4 md:px-12">
+		<div class="container mx-auto">
+			<h2 class="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-light italic text-white">
+				¿Cómo trabajamos?
+			</h2>
+		</div>
+
+		<img
+			src="/assets/icons/yiwu/card-chevron-up.svg"
+			alt=""
+			class="absolute -right-6 sm:-right-8 md:-right-12 bottom-0 translate-y-[55%] w-32 sm:w-56 md:w-64 lg:w-72 xl:w-80 z-30 pointer-events-none"
+		/>
+	</div>
+
+	<!-- Steps -->
+	<div class="bg-crema text-white pb-16 sm:pb-20">
+		<div class="container mx-auto px-4 md:px-12 pt-8 sm:pt-16">
+			{
+				steps.map((step, index) => (
+					<div class:list={[index > 0 && "border-t-[3px] border-white/50"]}>
+						<div class="py-1 sm:py-1.5">
+							<p class="text-xl sm:text-2xl md:text-3xl font-semibold text-white/70">{step.title}</p>
+							<p class="text-base sm:text-lg md:text-xl font-bold italic text-white">{step.description}</p>
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>

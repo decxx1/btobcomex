@@ -97,6 +97,15 @@ const isActive = (path: string) => {
 						]}
 					>Feria de Cantón</a>
 				</li>
+				<li>
+					<a 
+						href="/yiwu-market" 
+						class:list={[
+							"cursor-pointer hover:text-gray-200 transition-colors",
+							isActive('/yiwu-market') && "text-crema"
+						]}
+					>Mercado de Yiwu</a>
+				</li>
 				<li class="relative group">
 					<a
 						href="/services"
@@ -185,7 +194,7 @@ const isActive = (path: string) => {
 							"cursor-pointer hover:text-gray-200 transition-colors",
 							isActive('/partners') && "text-crema"
 						]}
-					>Partners estratégicos</a>
+					>Partners</a>
 				</li>
 			</ul>
 		</nav>
@@ -277,6 +286,19 @@ const isActive = (path: string) => {
 				</a>
 			</li>
 
+			<!-- Mercado de Yiwu -->
+			<li class="border-b border-white/20">
+				<a
+					href="/yiwu-market"
+					class:list={[
+						"mobile-link block px-6 py-4 hover:bg-verde-claro-2 transition-colors",
+						isActive('/yiwu-market') && "text-crema"
+					]}
+				>
+					Mercado de Yiwu
+				</a>
+			</li>
+
 			<!-- Servicios con submenu -->
 			<li class="border-b border-white/20">
 				<div class="flex items-center justify-between">
@@ -327,7 +349,7 @@ const isActive = (path: string) => {
 				</a>
 			</li>
 
-			<!-- Partners estratégicos -->
+			<!-- Partners -->
 			<li class="border-b border-white/20">
 				<a
 					href="/partners"
@@ -336,7 +358,7 @@ const isActive = (path: string) => {
 						isActive('/partners') && "text-crema"
 					]}
 				>
-					Partners estratégicos
+					Partners
 				</a>
 			</li>
 		</ul>

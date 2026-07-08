@@ -1,0 +1,48 @@
+---
+import ServiceItem from "./ServiceItem.astro";
+---
+
+<section class="relative mt-8 sm:mt-12 w-full">
+	<div class="relative w-full min-h-160 sm:min-h-192 lg:min-h-224 pb-20 sm:pb-28 lg:pb-36">
+		<img
+			src="/assets/images/yiwu-market/itinery.jpeg"
+			alt="Mercado Internacional de Yiwu"
+			class="absolute inset-0 w-full h-full object-cover object-center"
+		/>
+
+		<div class="relative z-10 w-full sm:w-[60%] lg:mx-0 lg:w-[44%] xl:w-[40%] flex flex-col pt-8 sm:pt-12 lg:pt-16">
+			<div class="bg-linear-to-r from-rojo-deg-1 from-40% to-black py-5 sm:py-6 px-6 md:px-10">
+				<h2 class="text-xl sm:text-2xl lg:text-3xl font-light italic text-white">
+					Nuestros servicios
+				</h2>
+			</div>
+
+			<div class="bg-black/70 px-6 md:px-10 py-10 sm:py-14 lg:py-20 space-y-8 sm:space-y-10 lg:space-y-12">
+				<ServiceItem
+					title="Búsqueda y validación de proveedores:"
+					description="identificamos fabricantes, solicitamos cotizaciones y verificamos su capacidad comercial."
+				/>
+
+				<ServiceItem
+					title="Auditorías y visitas a fábricas:"
+					description="visitamos las instalaciones para validar procesos, capacidad productiva y documentación."
+				/>
+
+				<ServiceItem
+					title="Control de calidad:"
+					description="realizamos inspecciones antes del embarque para verificar cantidades, calidad y especificaciones del pedido."
+				/>
+
+				<ServiceItem
+					title="Consolidación de compras:"
+					description="coordinamos pedidos de distintos proveedores, organizamos la carga y optimizamos el envío."
+				/>
+
+				<ServiceItem
+					title="Acompañamiento en Yiwu:"
+					description="recibimos a empresarios y equipos comerciales en China, coordinamos recorridos por el mercado y brindamos asistencia y traducción durante reuniones y negociaciones."
+				/>
+			</div>
+		</div>
+	</div>
+</section>
