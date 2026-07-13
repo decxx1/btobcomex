@@ -8,25 +8,43 @@ const meetNotifyMessage = encodeURIComponent(
 const meetNotifyUrl = whatsappUrl
 	? `${whatsappUrl}${whatsappUrl.includes("?") ? "&" : "?"}text=${meetNotifyMessage}`
 	: "#";
+
+const webinarDays = [
+	{
+		day: 1,
+		label: "Miércoles 22 de julio",
+		shortLabel: "Mié 22/7",
+		time: "19:00 a 20:15 hs",
+		meetUrl: "https://meet.google.com/jiq-ikxx-ruw",
+	},
+	{
+		day: 2,
+		label: "Jueves 23 de julio",
+		shortLabel: "Jue 23/7",
+		time: "19:00 a 20:15 hs",
+		meetUrl: "https://meet.google.com/jtu-kxvc-ydf",
+	},
+];
 ---
 
 <div id="webinar-widget" class="font-montserrat">
 	<!-- Modal popup -->
 	<div
 		id="webinar-modal"
-		class="webinar-modal fixed inset-0 z-60 flex items-center justify-center p-4 sm:p-6 opacity-0 pointer-events-none transition-opacity duration-300"
+		class="webinar-modal fixed inset-0 z-60 overflow-y-auto overscroll-contain opacity-0 pointer-events-none transition-opacity duration-300"
 		aria-hidden="true"
 		role="dialog"
 		aria-labelledby="webinar-title"
 		aria-modal="true"
 	>
 		<div
-			class="webinar-backdrop absolute inset-0 bg-verde-deg-black/80 backdrop-blur-sm"
+			class="webinar-backdrop fixed inset-0 bg-verde-deg-black/80 backdrop-blur-sm"
 			data-webinar-close
 		></div>
 
+		<div class="relative z-10 flex min-h-full w-full items-center justify-center p-4 py-6 sm:p-6 sm:py-8">
 		<div
-			class="webinar-card relative w-full max-w-5xl overflow-hidden rounded-lg shadow-2xl translate-y-4 scale-[0.97] transition-all duration-300"
+			class="webinar-card relative my-auto w-full max-w-5xl rounded-lg shadow-2xl translate-y-4 scale-[0.97] transition-all duration-300"
 		>
 			<button
 				type="button"
@@ -39,7 +57,7 @@ const meetNotifyUrl = whatsappUrl
 				</svg>
 			</button>
 
-			<div class="relative overflow-hidden">
+			<div class="relative overflow-hidden rounded-lg">
 				<img
 					src="/assets/images/webinar/webinar-bg.webp"
 					alt=""
@@ -107,7 +125,7 @@ const meetNotifyUrl = whatsappUrl
 								<div class="webinar-info-divider" aria-hidden="true"></div>
 								<div class="webinar-info-item">
 									<img src="/assets/icons/webinar/clock.svg" alt="" class="webinar-info-icon" />
-									<span>19 h</span>
+									<span>19 a 20:15 h</span>
 								</div>
 								<div class="webinar-info-divider" aria-hidden="true"></div>
 								<div class="webinar-info-item">
@@ -122,10 +140,63 @@ const meetNotifyUrl = whatsappUrl
 							</div>
 						</div>
 
-						<div class="mx-auto max-w-2xl px-2 pt-2 text-center sm:px-4">
-							<p class="text-sm leading-relaxed text-white/90 sm:text-base">
-								El link de Google Meet estará disponible próximamente en esta web.
+						<div class="mx-auto max-w-3xl px-2 pt-2 sm:px-4">
+							<p class="text-center text-sm leading-relaxed text-white/90 sm:text-base">
+								Elegí el día que te quede mejor y unite al webinar por Google Meet. Es gratuito y no
+								necesitás instalar nada: solo hacé clic en el día que prefieras.
 							</p>
+
+							<div class="mt-5 grid gap-4 sm:grid-cols-2">
+								{
+									webinarDays.map(({ day, label, shortLabel, time, meetUrl }) => (
+										<a
+											href={meetUrl}
+											target="_blank"
+											rel="noopener noreferrer"
+											aria-label={`Unirme al webinar Día ${day} — ${label} a las ${time}`}
+											class="webinar-day-card group flex flex-col rounded-xl border border-white/25 bg-white/10 p-4 text-left backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-crema/50 hover:bg-white/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-verde-claro sm:p-5"
+										>
+											<div class="mb-3 flex items-center justify-between gap-2">
+												<span class="rounded-full bg-crema/20 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-crema">
+													Día {day}
+												</span>
+												<img
+													src="/assets/icons/webinar/meet.svg"
+													alt=""
+													class="size-6 shrink-0 opacity-90"
+													aria-hidden="true"
+												/>
+											</div>
+
+											<h4 class="text-lg font-bold leading-tight text-white sm:text-xl">
+												<span class="sm:hidden">{shortLabel}</span>
+												<span class="hidden sm:inline">{label}</span>
+											</h4>
+
+											<p class="mt-1.5 text-sm text-white/80">{time}</p>
+											<p class="mt-0.5 text-xs text-white/60">Hora de Argentina</p>
+
+											<span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-verde-claro transition-colors group-hover:text-white">
+												Unirme al webinar
+												<svg
+													class="size-4 transition-transform group-hover:translate-x-0.5"
+													viewBox="0 0 24 24"
+													fill="none"
+													stroke="currentColor"
+													stroke-width="2"
+												>
+													<path
+														d="M5 12h14M13 6l6 6-6 6"
+														stroke-linecap="round"
+														stroke-linejoin="round"
+													/>
+												</svg>
+											</span>
+										</a>
+									))
+								}
+							</div>
+
 							<div class="mt-4 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
 								<a
 									href={meetNotifyUrl}
@@ -162,6 +233,7 @@ const meetNotifyUrl = whatsappUrl
 					</div>
 				</div>
 			</div>
+		</div>
 		</div>
 	</div>
 
@@ -325,6 +397,10 @@ const meetNotifyUrl = whatsappUrl
 		align-self: stretch;
 		background: rgba(255, 255, 255, 0.25);
 		margin-block: 0.15rem;
+	}
+
+	.webinar-modal {
+		-webkit-overflow-scrolling: touch;
 	}
 
 	.webinar-modal.is-open {
