@@ -3,15 +3,36 @@ import { SOCIAL_WHATSAPP_URL } from "astro:env/client";
 
 const whatsappUrl = SOCIAL_WHATSAPP_URL ?? "";
 
-const webinar = {
-	label: "Jueves 6 de agosto",
-	shortLabel: "Jue 6/8",
-	time: "19:00 hs",
-	confirmUrl: "https://calendar.app.google/cskG5msvTTyD4whd7",
-};
+const webinars = [
+	{
+		id: "2026-08-20-1100",
+		label: "Jueves 20 de agosto",
+		shortLabel: "Jue 20/8",
+		dateLabel: "20 de agosto",
+		time: "11:00 a 12:30 hs",
+		summaryTime: "11:00 h",
+		startAt: "2026-08-20T11:00:00-03:00",
+		endAt: "2026-08-20T12:30:00-03:00",
+		confirmUrl: "https://meet.google.com/mmb-hqwp-vxv",
+	},
+	{
+		id: "2026-08-20-1900",
+		label: "Jueves 20 de agosto",
+		shortLabel: "Jue 20/8",
+		dateLabel: "20 de agosto",
+		time: "19:00 a 20:30 hs",
+		summaryTime: "19:00 h",
+		startAt: "2026-08-20T19:00:00-03:00",
+		endAt: "2026-08-20T20:30:00-03:00",
+		confirmUrl: "https://meet.google.com/giq-nyur-tsw",
+	},
+];
+
+const webinarDateSummary = [...new Set(webinars.map(({ dateLabel }) => dateLabel))].join(" · ");
+const webinarTimeSummary = webinars.map(({ summaryTime }) => summaryTime).join(" / ");
 ---
 
-<div id="webinar-widget" class="font-montserrat">
+<div id="webinar-widget" class="font-montserrat" data-webinars={JSON.stringify(webinars)}>
 	<!-- Modal popup -->
 	<div
 		id="webinar-modal"
@@ -94,7 +115,7 @@ const webinar = {
 						<div class="flex flex-col gap-6 lg:flex-row lg:items-stretch lg:gap-8">
 							<div class="flex flex-1 items-center justify-center px-2 py-2 sm:px-4 sm:py-4">
 								<p class="webinar-bracketed text-center font-medium leading-snug text-white text-base md:text-lg">
-									Todo lo que necesitás saber para aprovechar la feria y generar oportunidades
+									<b>Todo lo que necesitás saber</b><br> para aprovechar la feria y generar oportunidades
 									comerciales.
 								</p>
 							</div>
@@ -104,12 +125,12 @@ const webinar = {
 							>
 								<div class="webinar-info-item">
 									<img src="/assets/icons/webinar/calendar.svg" alt="" class="webinar-info-icon" />
-									<span>6 de<br />agosto</span>
+									<span data-webinar-summary-date>{webinarDateSummary}</span>
 								</div>
 								<div class="webinar-info-divider" aria-hidden="true"></div>
 								<div class="webinar-info-item">
 									<img src="/assets/icons/webinar/clock.svg" alt="" class="webinar-info-icon" />
-									<span>19 h</span>
+									<span data-webinar-summary-time>{webinarTimeSummary}</span>
 								</div>
 								<div class="webinar-info-divider" aria-hidden="true"></div>
 								<div class="webinar-info-item">
@@ -126,55 +147,63 @@ const webinar = {
 
 						<div class="mx-auto max-w-3xl px-2 pt-2 sm:px-4">
 							<p class="text-center text-sm leading-relaxed text-white/90 sm:text-base">
-								Confirmá tu asistencia al webinar por Google Meet. Es gratuito y no necesitás
-								instalar nada.
+								Elegí el horario que prefieras e ingresá al webinar por Google Meet. Es gratuito y no
+								necesitás instalar nada.
 							</p>
 
-							<div class="mt-5 flex justify-center">
-								<a
-									href={webinar.confirmUrl}
-									target="_blank"
-									rel="noopener noreferrer"
-									aria-label={`Confirmar asistencia al webinar — ${webinar.label} a las ${webinar.time}`}
-									class="webinar-day-card group flex w-full max-w-md flex-col rounded-xl border border-white/25 bg-white/10 p-4 text-left backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-crema/50 hover:bg-white/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-verde-claro sm:p-5"
-								>
-									<div class="mb-3 flex items-center justify-between gap-2">
-										<span class="rounded-full bg-crema/20 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-crema">
-											Próxima fecha
-										</span>
-										<img
-											src="/assets/icons/webinar/meet.svg"
-											alt=""
-											class="size-6 shrink-0 opacity-90"
-											aria-hidden="true"
-										/>
-									</div>
-
-									<h4 class="text-lg font-bold leading-tight text-white sm:text-xl">
-										<span class="sm:hidden">{webinar.shortLabel}</span>
-										<span class="hidden sm:inline">{webinar.label}</span>
-									</h4>
-
-									<p class="mt-1.5 text-sm text-white/80">{webinar.time}</p>
-									<p class="mt-0.5 text-xs text-white/60">Hora de Argentina</p>
-
-									<span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-verde-claro transition-colors group-hover:text-white">
-										Confirmar asistencia
-										<svg
-											class="size-4 transition-transform group-hover:translate-x-0.5"
-											viewBox="0 0 24 24"
-											fill="none"
-											stroke="currentColor"
-											stroke-width="2"
+							<div data-webinar-cards class="mt-5 grid gap-4 sm:grid-cols-2">
+								{
+									webinars.map((webinar) => (
+										<a
+											data-webinar-card
+											data-webinar-id={webinar.id}
+											data-webinar-start={webinar.startAt}
+											data-webinar-end={webinar.endAt}
+											href={webinar.confirmUrl}
+											target="_blank"
+											rel="noopener noreferrer"
+											aria-label={`Ingresar al webinar — ${webinar.label} a las ${webinar.time}`}
+											class="webinar-day-card group w-full flex-col rounded-xl border border-white/25 bg-white/10 p-4 text-left backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-crema/50 hover:bg-white/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-verde-claro sm:p-5"
 										>
-											<path
-												d="M5 12h14M13 6l6 6-6 6"
-												stroke-linecap="round"
-												stroke-linejoin="round"
-											/>
-										</svg>
-									</span>
-								</a>
+											<div class="mb-3 flex items-center justify-between gap-2">
+												<span class="rounded-full bg-crema/20 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-crema">
+													Próxima fecha
+												</span>
+												<img
+													src="/assets/icons/webinar/meet.svg"
+													alt=""
+													class="size-6 shrink-0 opacity-90"
+													aria-hidden="true"
+												/>
+											</div>
+
+											<h4 class="text-lg font-bold leading-tight text-white sm:text-xl">
+												<span class="sm:hidden">{webinar.shortLabel}</span>
+												<span class="hidden sm:inline">{webinar.label}</span>
+											</h4>
+
+											<p class="mt-1.5 text-sm text-white/80">{webinar.time}</p>
+											<p class="mt-0.5 text-xs text-white/60">Hora de Argentina</p>
+
+											<span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-verde-claro transition-colors group-hover:text-white">
+												Ingresar al webinar
+												<svg
+													class="size-4 transition-transform group-hover:translate-x-0.5"
+													viewBox="0 0 24 24"
+													fill="none"
+													stroke="currentColor"
+													stroke-width="2"
+												>
+													<path
+														d="M5 12h14M13 6l6 6-6 6"
+														stroke-linecap="round"
+														stroke-linejoin="round"
+													/>
+												</svg>
+											</span>
+										</a>
+									))
+								}
 							</div>
 
 							<div class="mt-4 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
@@ -366,6 +395,14 @@ const webinar = {
 		margin-block: 0.15rem;
 	}
 
+	.webinar-day-card {
+		display: none;
+	}
+
+	.webinar-day-card.is-visible {
+		display: flex;
+	}
+
 	.webinar-modal {
 		-webkit-overflow-scrolling: touch;
 	}
@@ -395,18 +432,63 @@ const webinar = {
 <script>
 	const STORAGE_KEY = "btobcomex-webinar-seen";
 	const SHOW_DELAY_MS = 1200;
+	type ScheduledWebinar = {
+		id: string;
+		label: string;
+		shortLabel: string;
+		dateLabel: string;
+		time: string;
+		summaryTime: string;
+		startAt: string;
+		endAt: string;
+	};
 
 	function initWebinarWidget() {
 		const widget = document.getElementById("webinar-widget");
 		const modal = document.getElementById("webinar-modal");
 		const floatingActions = document.getElementById("webinar-floating-actions");
 		const expandBtn = document.getElementById("webinar-floating-expand");
+		const summaryDate = widget?.querySelector<HTMLElement>("[data-webinar-summary-date]");
+		const summaryTime = widget?.querySelector<HTMLElement>("[data-webinar-summary-time]");
+		const cards = widget
+			? Array.from(widget.querySelectorAll<HTMLElement>("[data-webinar-card]"))
+			: [];
 
 		if (!widget || !modal || !floatingActions || widget.dataset.ready === "1") return;
 		widget.dataset.ready = "1";
 
+		const scheduledWebinars = JSON.parse(widget.dataset.webinars ?? "[]") as ScheduledWebinar[];
 		let showTimeout: ReturnType<typeof setTimeout> | undefined;
-		const seen = localStorage.getItem(STORAGE_KEY) === "1";
+		let availabilityTimeout: ReturnType<typeof setTimeout> | undefined;
+		let activeWebinars = getActiveWebinars();
+
+		function getActiveWebinars(now = Date.now()) {
+			return scheduledWebinars
+				.filter((webinar) => {
+					const endAt = Date.parse(webinar.endAt);
+					return Number.isFinite(endAt) && endAt > now;
+				})
+				.sort((first, second) => Date.parse(first.startAt) - Date.parse(second.startAt));
+		}
+
+		function getSeenWebinarId() {
+			try {
+				return localStorage.getItem(STORAGE_KEY);
+			} catch {
+				return null;
+			}
+		}
+
+		function markWebinarAsSeen() {
+			const nextWebinar = activeWebinars[0];
+			if (!nextWebinar) return;
+
+			try {
+				localStorage.setItem(STORAGE_KEY, nextWebinar.id);
+			} catch {
+				// El widget sigue funcionando aunque el navegador bloquee localStorage.
+			}
+		}
 
 		const showFloating = (withWebinarBtn: boolean) => {
 			floatingActions.classList.add("is-visible");
@@ -422,6 +504,8 @@ const webinar = {
 		};
 
 		const openModal = () => {
+			if (!activeWebinars.length) return;
+
 			clearTimeout(showTimeout);
 			hideFloating();
 			modal.classList.add("is-open");
@@ -436,11 +520,54 @@ const webinar = {
 			document.body.classList.remove("webinar-modal-open");
 
 			if (persist) {
-				localStorage.setItem(STORAGE_KEY, "1");
+				markWebinarAsSeen();
 			}
 
-			showFloating(true);
+			showFloating(activeWebinars.length > 0);
 		};
+
+		const updateSummary = () => {
+			if (!activeWebinars.length) return;
+
+			const dates = [...new Set(activeWebinars.map(({ dateLabel }) => dateLabel))].join(" · ");
+			const times = activeWebinars.map(({ summaryTime }) => summaryTime).join(" / ");
+			if (summaryDate) summaryDate.textContent = dates;
+			if (summaryTime) summaryTime.textContent = times;
+		};
+
+		const scheduleAvailabilityCheck = () => {
+			clearTimeout(availabilityTimeout);
+			const nextEndAt = activeWebinars.reduce((soonest, webinar) => {
+				const endAt = Date.parse(webinar.endAt);
+				return endAt < soonest ? endAt : soonest;
+			}, Number.POSITIVE_INFINITY);
+
+			if (!Number.isFinite(nextEndAt)) return;
+
+			const delay = Math.max(nextEndAt - Date.now() + 100, 0);
+			availabilityTimeout = setTimeout(refreshAvailability, Math.min(delay, 2_147_483_647));
+		};
+
+		function refreshAvailability() {
+			activeWebinars = getActiveWebinars();
+			const activeIds = new Set(activeWebinars.map(({ id }) => id));
+
+			cards.forEach((card) => {
+				card.classList.toggle("is-visible", activeIds.has(card.dataset.webinarId ?? ""));
+			});
+
+			updateSummary();
+
+			if (!activeWebinars.length) {
+				clearTimeout(showTimeout);
+				if (modal.classList.contains("is-open")) dismissModal(false);
+				showFloating(false);
+				return;
+			}
+
+			if (!modal.classList.contains("is-open")) showFloating(true);
+			scheduleAvailabilityCheck();
+		}
 
 		modal.querySelectorAll("[data-webinar-close]").forEach((el) => {
 			el.addEventListener("click", () => dismissModal(true));
@@ -454,9 +581,10 @@ const webinar = {
 			}
 		});
 
-		if (seen) {
-			showFloating(true);
-		} else {
+		refreshAvailability();
+		const hasUnseenWebinar = activeWebinars.length > 0 && getSeenWebinarId() !== activeWebinars[0].id;
+
+		if (hasUnseenWebinar) {
 			showFloating(false);
 			showTimeout = setTimeout(openModal, SHOW_DELAY_MS);
 		}
