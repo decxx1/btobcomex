@@ -234,7 +234,14 @@ const webinarsWithSummary = webinars.map((webinar) => ({
 	summaryDateLabel: toSummaryDateLabel(webinar.startAt),
 }));
 
-const webinarDateSummary = [...new Set(webinarsWithSummary.map(({ summaryDateLabel }) => summaryDateLabel))].join("\n");
+function toSummaryDateRange(items: { summaryDateLabel: string }[]) {
+	const dates = [...new Set(items.map(({ summaryDateLabel }) => summaryDateLabel))];
+	if (!dates.length) return "";
+	if (dates.length === 1) return dates[0];
+	return `${dates[0]} al ${dates[dates.length - 1]}`;
+}
+
+const webinarDateSummary = toSummaryDateRange(webinarsWithSummary);
 const webinarTimeSummary = [...new Set(webinarsWithSummary.map(({ summaryTime }) => summaryTime))].join(" y ");
 ---
 
@@ -919,7 +926,7 @@ const webinarTimeSummary = [...new Set(webinarsWithSummary.map(({ summaryTime })
 		const updateSummary = () => {
 			if (!activeWebinars.length) return;
 
-			const dates = [...new Set(activeWebinars.map(({ summaryDateLabel }) => summaryDateLabel))].join("\n");
+			const dates = toSummaryDateRange(activeWebinars);
 			const times = [...new Set(visibleWebinars.map(({ summaryTime }) => summaryTime))].join(" y ");
 			if (summaryDate) summaryDate.textContent = dates;
 			if (summaryTime) summaryTime.textContent = times;
