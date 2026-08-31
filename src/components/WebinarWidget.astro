@@ -773,6 +773,13 @@ const webinarTimeSummary = [...new Set(webinarsWithSummary.map(({ summaryTime })
 		endAt: string;
 	};
 
+	function toSummaryDateRange(items: ScheduledWebinar[]) {
+		const dates = [...new Set(items.map(({ summaryDateLabel }) => summaryDateLabel))];
+		if (!dates.length) return "";
+		if (dates.length === 1) return dates[0];
+		return `${dates[0]} al ${dates[dates.length - 1]}`;
+	}
+
 	function initWebinarWidget() {
 		const widget = document.getElementById("webinar-widget");
 		const modal = document.getElementById("webinar-modal");
