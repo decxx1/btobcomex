@@ -90,16 +90,14 @@ const whatsappUrl = SOCIAL_WHATSAPP_URL ?? "";
 
 		let targetMonthName = "Abril";
 		let targetYear = currentYear;
+		const campaignStartYear = 2027;
 
-		if (currentMonth > 9 || (currentMonth === 9 && currentDay >= 10)) {
-			targetMonthName = "Abril";
+		if (currentYear < campaignStartYear) {
+			targetYear = campaignStartYear;
+		} else if (currentMonth > 9 || (currentMonth === 9 && currentDay >= 10)) {
 			targetYear = currentYear + 1;
 		} else if (currentMonth > 3 || (currentMonth === 3 && currentDay >= 10)) {
 			targetMonthName = "Octubre";
-			targetYear = currentYear;
-		} else {
-			targetMonthName = "Abril";
-			targetYear = currentYear;
 		}
 
 		const dynamicText = `${targetMonthName} ${targetYear}`;
